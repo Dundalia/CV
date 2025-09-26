@@ -1,0 +1,136 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{1}
+  \datalist[entry]{ynt/global//global/global/global}
+    \entry{Baldelli2024TWOLAR}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=1d48a9927eea56230ce3e8baf52ecfb7}{%
+           family={Baldelli},
+           familyi={B\bibinitperiod},
+           given={Davide},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7bb9d14704f8555bb02306ed70ea822c}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Junfeng},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=323194933837b8ec62e4f30f41cb2c85}{%
+           family={Aizawa},
+           familyi={A\bibinitperiod},
+           given={Akiko},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ace71bc0a9dc508d5006c826133bf14b}{%
+           family={Torroni},
+           familyi={T\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{44862b1490a3c167cd25e0dd3bc29d4b}
+      \strng{fullhash}{aa880c9a3161c4a675e53038c1cea2ff}
+      \strng{fullhashraw}{aa880c9a3161c4a675e53038c1cea2ff}
+      \strng{bibnamehash}{44862b1490a3c167cd25e0dd3bc29d4b}
+      \strng{authorbibnamehash}{44862b1490a3c167cd25e0dd3bc29d4b}
+      \strng{authornamehash}{44862b1490a3c167cd25e0dd3bc29d4b}
+      \strng{authorfullhash}{aa880c9a3161c4a675e53038c1cea2ff}
+      \strng{authorfullhashraw}{aa880c9a3161c4a675e53038c1cea2ff}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the European Conference on Information Retrieval (ECIR 2024)}
+      \field{note}{In Press}
+      \field{title}{TWOLAR: a TWO-step LLM-Augmented distillation method for passage Reranking}
+      \field{year}{2024}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://link.springer.com/chapter/10.1007/978-3-031-56027-9_29
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/chapter/10.1007/978-3-031-56027-9_29
+      \endverb
+    \endentry
+    \entry{govindarajan2025cadmium}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=f288c406c04a85ac292a30be85a05fa5}{%
+           family={Govindarajan},
+           familyi={G\bibinitperiod},
+           given={Prashant},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d48a9927eea56230ce3e8baf52ecfb7}{%
+           family={Baldelli},
+           familyi={B\bibinitperiod},
+           given={Davide},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=195a8665e1395052948f9af0ce4d3f37}{%
+           family={Pathak},
+           familyi={P\bibinitperiod},
+           given={Jay},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=de40290534f565e873d5eab079d20013}{%
+           family={Fournier},
+           familyi={F\bibinitperiod},
+           given={Quentin},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5fc5e175d6caeca6cf596c994cc02cd8}{%
+           family={Chandar},
+           familyi={C\bibinitperiod},
+           given={Sarath},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4409a9ef443538d1245536c5dfbffad4}
+      \strng{fullhash}{11f536fd0edc160c304facce677d49c0}
+      \strng{fullhashraw}{11f536fd0edc160c304facce677d49c0}
+      \strng{bibnamehash}{4409a9ef443538d1245536c5dfbffad4}
+      \strng{authorbibnamehash}{4409a9ef443538d1245536c5dfbffad4}
+      \strng{authornamehash}{4409a9ef443538d1245536c5dfbffad4}
+      \strng{authorfullhash}{11f536fd0edc160c304facce677d49c0}
+      \strng{authorfullhashraw}{11f536fd0edc160c304facce677d49c0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2507.09792}
+      \field{title}{CADmium: Fine-Tuning Code Language Models for Text-Driven Sequential CAD Design}
+      \field{year}{2025}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2507.09792
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2507.09792
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
