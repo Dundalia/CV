@@ -25,20 +25,16 @@
  \cvsubsection{Conference Proceedings}
  \begin{refsection}
       \nocite{Baldelli2024TWOLAR} % Assuming Baldelli2024TWOLAR is the key for your ECIR paper
- 	\printbibliography[
- 	heading=none, 
- 	sorting=ydnt, 
-        url=true, 
- 	]
+    \begin{refcontext}[sorting=ydnt]
+        \printbibliography[heading=none]
+    \end{refcontext}
  \end{refsection}
 
 % Add this new subsection for Pre-prints
  \cvsubsection{Pre-prints} 
  \begin{refsection}
      \nocite{govindarajan2025cadmium} % BibTeX key for your new CADmium paper
-     \printbibliography[
-         heading=none, 
-         sorting=ydnt, % You can choose sorting order e.g., ydnt (year-desc, name, title)
-         url=true, % To print URLs if available in BibTeX entry (e.g. arXiv link)
-     ]
+     \begin{refcontext}[sorting=ydnt]
+         \printbibliography[heading=none]
+     \end{refcontext}
  \end{refsection}

@@ -1,54 +1,52 @@
-# autoCV
+# CVs in this repo
 
-A clean CV template in LaTeX along with a GitHub action that complies the `*.tex` file and publishes a new PDF version when new changes are pushed to the repo
+This repository contains two LaTeX CVs:
 
-## Template Design
+- `autocv/` — autoCV template (`cv.tex`).
+- `russell_cv/` — russell class (`resume.tex`).
 
-The template is designed to be clean with sections for
-- Tabular sections for Work Experience, Education and Projects
-- Support for including a list of publications read from a `*.bib` file
-- Header with Font Awesome icons
+Only `README.md` and `index.html` live at the repo root. To publish/use one CV at the site root, move the chosen CV up to `./` before building or deploying (see “Choosing which CV to use”).
 
-## Quickstart
-- Fork this repo (you can use the `Use this template` button)
-- Give the workflow write permissions for your forked repo (Settings -> Actions -> General)
-- Modify the `cv.tex` file and push changes to your repo
-- Set GitHub pages source to build branch (Settings -> Pages)
-- The complied PDF will be available under the `build` branch
+## Compile instructions
 
-You can get a direct link to the generated PDF which you can use on your website, LinkedIn etc. that will always point to the latest version of your CV. Once your site is published, your CV will be accessible at: `https://username.github.io/repo-name/`
+### autoCV (`autocv/`)
+- Prereqs: LaTeX with `latexmk`, `biblatex`/`biber`.
+- Build:
+```bash
+cd autocv
+make
+# outputs: cv.pdf
+```
+- Clean:
+```bash
+cd autocv
+make clean       # intermediates
+make distclean   # also removes cv.pdf
+```
 
-NOTE: For the direct link to work, after editing your copy of `cv.tex` and pushing changes to your repo, under Settings -> Pages set your Github Pages source to the `build` directory
+### russell CV (`russell_cv/`)
+- Prereqs: XeLaTeX and packages/fonts from `russell.cls` (fontspec, unicode-math, fontawesome5, roboto, sourcesanspro, tcolorbox, tikz/pgf, biblatex + biber).
+- Build:
+```bash
+cd russell_cv
+xelatex -interaction=nonstopmode -halt-on-error resume.tex
+biber resume
+xelatex -interaction=nonstopmode -halt-on-error resume.tex
+xelatex -interaction=nonstopmode -halt-on-error resume.tex
+# outputs: resume.pdf
+```
 
-![](https://i.imgur.com/lwATw1o.png)
+## Choosing which CV to use
 
-## This template on Overleaf
+The site expects the active CV at the repository root. To switch:
 
-<a href="https://www.overleaf.com/latex/templates/autocv/scfvqfpxncwb"><img alt="Overleaf" src="https://img.shields.io/badge/Overleaf-47A141.svg?style=for-the-badge&logo=Overleaf&logoColor=white"/></a>
+- Use autoCV at root:
+  - Move `autocv/cv.tex` and related project files (e.g., `citations.bib`, `Makefile`) to `./`.
+  - Or keep building inside `autocv/` and copy `autocv/cv.pdf` to `./cv.pdf` for publishing.
 
-Also, if you have a premium subscription to Overleaf, you can use Overleaf's GitHub integration to push changes to your GitHub repo directly from Overleaf.
+- Use russell CV at root:
+  - Move `russell_cv/resume.tex` and its `cv/` directory (and `fonts/` if needed) to `./`.
+  - Or keep building inside `russell_cv/` and copy `russell_cv/resume.pdf` to `./resume.pdf` (or `./cv.pdf`) for publishing.
 
-## Compiling the CV on your local computer
-- type `make` in the `autoCV` directory to produce file `cv.pdf`
-- you can optionally type `make clean` or `make distclean` to remove intermediate files
-
-## Detailed Instructions..
-
-[.. are available here](https://github.com/jitinnair1/autoCV/wiki/How-to-use-autoCV:-Detailed-Instructions)
-
-## More options
-- If you'd like a custom URL like `cv.name.com` check out [this page](https://github.com/jitinnair1/autoCV/wiki/Custom-URL-for-your-CV)
-- If you want to add use different versions of the CV for different langauges, you can modify the script [as seen here](https://github.com/MateusRosario/myAutoCV/blob/main/.github/workflows/build.yml) (from Mateus Rosario's [fork](https://github.com/MateusRosario/myAutoCV) of this repo)  
-
-## Issues
-Please start a new discussion or issue if you encounter problems
-
-PS: If you liked the template, do star :star: it! Thanks!
-
-
-### Also, check out:
-
-- [gradfolio](https://github.com/jitinnair1/gradfolio) - a minimal, quick-setup template for a personal website/portfolio
-- [Tail](https://github.com/jitinnair1/tail) - a minimal, quick-setup template for a blog
-- [snippet-book](https://github.com/jitinnair1/snippet-book) -terminal style, clean Jekyll blog theme with catppuccin colours
+Tip: instead of moving, you can symlink the chosen CV into `./` if your hosting workflow supports it.
 

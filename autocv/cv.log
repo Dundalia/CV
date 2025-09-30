@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  26 SEP 2025 19:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  30 SEP 2025 17:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -751,24 +751,34 @@ Package hyperref Info: Link coloring ON on input line 129.
 nds0.fd)
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/fontawesome5/ufontawesomefre
 e1.fd)
-Underfull \hbox (badness 10000) in paragraph at lines 164--167
+Underfull \hbox (badness 10000) in paragraph at lines 184--187
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--179
+Underfull \hbox (badness 10000) in paragraph at lines 188--199
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--184
+Underfull \hbox (badness 10000) in paragraph at lines 200--204
 
  []
 
-\blx@maxsegment@1=\count435
-\blx@sectionciteorder@1=\count436
-Package biblatex Info: Reference section=1 on input line 212.
-Package biblatex Info: Setting label 'refsection:1' on input line 212.
+
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 210.
+
+
+Overfull \hbox (87.10516pt too wide) in alignment at lines 210--210
+[][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--215
+
+ []
+
 
 
 [1
@@ -777,43 +787,43 @@ Package biblatex Info: Setting label 'refsection:1' on input line 212.
 r/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.en
 c}{/usr/local/texlive/2025basic/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free
 1.enc}]
-Package biblatex Info: Reference section=0 on input line 215.
-
-
-Package tabularx Warning: X Columns too narrow (table too wide)
-(tabularx)                 on input line 236.
-
-
-Overfull \hbox (67.88303pt too wide) in alignment at lines 236--236
-[][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 236--242
+Underfull \hbox (badness 10000) in paragraph at lines 216--221
 
  []
 
+\blx@maxsegment@1=\count435
+\blx@sectionciteorder@1=\count436
+Package biblatex Info: Reference section=1 on input line 254.
+Package biblatex Info: Setting label 'refsection:1' on input line 254.
+Package biblatex Info: Reference section=0 on input line 257.
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--284
+
+ []
 
 
-[2] (./cv.aux)
+
+[2]
+
+[3] (./cv.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `cv.out' has not changed.
-(rerunfilecheck)             Checksum: E4271D09BA9857C92034382075A6172D;859.
+(rerunfilecheck)             Checksum: 21C63F49D0DCA69273759D43710B552A;1135.
 Package logreq Info: Writing requests to 'cv.run.xml'.
 \openout1 = `cv.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21036 strings out of 474662
- 383616 string characters out of 5751110
+ 21041 strings out of 474662
+ 383664 string characters out of 5751110
  1219173 words of memory out of 5000000
- 43862 multiletter control sequences out of 15000+600000
+ 43864 multiletter control sequences out of 15000+600000
  564222 words of font info for 54 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 66i,11n,81p,1195b,1481s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 66i,11n,81p,1195b,1321s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025basic/texmf-dist/fonts/type1/public/fontawesome5/Font
 Awesome5Brands-Regular.pfb></usr/local/texlive/2025basic/texmf-dist/fonts/type1
 /public/fontawesome5/FontAwesome5Free-Solid.pfb></usr/local/texlive/2025basic/t
@@ -827,10 +837,10 @@ exlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local
 ocal/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></u
 sr/local/texlive/2025basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
 >
-Output written on cv.pdf (2 pages, 139859 bytes).
+Output written on cv.pdf (3 pages, 143179 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 140 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
+ 16 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
