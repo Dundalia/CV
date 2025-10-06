@@ -54,8 +54,12 @@
 \RequirePackage{unicode-math}
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome5}
-\RequirePackage{roboto}
-\RequirePackage[default,opentype]{sourcesanspro}
+% Sans-serif fonts removed for serif/traditional LaTeX style
+% \RequirePackage{roboto}
+% \RequirePackage[default,opentype]{sourcesanspro}
+% Using Computer Modern - clean, subtle serifs, classic LaTeX font (always available)
+% No package needed - it's the LaTeX default
+% Math fonts handled by unicode-math (already loaded above)
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
@@ -143,11 +147,12 @@
 %-------------------------------------------------------------------------------
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
-\newcommand*{\headerfont}{\roboto}
-\newcommand*{\headerfontlight}{\robotolight}
-\newcommand*{\footerfont}{\sourcesanspro}
-\newcommand*{\bodyfont}{\sourcesanspro}
-\newcommand*{\bodyfontlight}{\sourcesansprolight}
+% Updated to use Charter - compact serif with subtle serifs
+\newcommand*{\headerfont}{\rmfamily}
+\newcommand*{\headerfontlight}{\rmfamily\mdseries}
+\newcommand*{\footerfont}{\rmfamily}
+\newcommand*{\bodyfont}{\rmfamily}
+\newcommand*{\bodyfontlight}{\rmfamily\mdseries}
 
 %-------------------------------------------------------------------------------
 %                Configuration for styles
@@ -161,7 +166,7 @@
 \newcommand*{\headersocialstyle}[1]{{\fontsize{6.8pt}{1em}\headerfont\color{text} #1}}
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
-\newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
+\newcommand*{\sectionstyle}[1]{{\fontsize{14pt}{1em}\bodyfont\scshape\bfseries\color{text}\@sectioncolor #1}}
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
@@ -385,8 +390,8 @@
 \newcommand{\acvHeaderAfterQuoteSkip}{5mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{3mm}
-\newcommand{\acvSectionContentTopSkip}{2.5mm}
+\newcommand{\acvSectionTopSkip}{2mm}
+\newcommand{\acvSectionContentTopSkip}{1mm}
 
 
 %-------------------------------------------------------------------------------
@@ -474,7 +479,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
+          \href{https://\@github}{\faGithubSquare\acvHeaderIconSep github}%
         }%
       \ifthenelse{\isundefined{\@gitlab}}%
         {}%
@@ -498,7 +503,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.\@linkedin}{\faLinkedin\acvHeaderIconSep\@linkedin}%
+          \href{https://www.\@linkedin}{\faLinkedin\acvHeaderIconSep linkedin}%
         }%
       \ifthenelse{\isundefined{\@orcid}}%
         {}%
@@ -597,20 +602,20 @@
 % Define a subsection for CV
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
-  \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{0mm}
   \subsectionstyle{#1}
+  \vspace{-0.5mm}
   \phantomsection
 }
 
 % Define a paragraph for CV
 \newenvironment{cvparagraph}{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{-1mm}
   \paragraphstyle
 }{%
   \par
-  \vspace{2mm}
+  \vspace{0mm}
 }
 
 % Define an environment for cventry
@@ -623,7 +628,8 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
+  % Space between consecutive entries
+  % \vspace{0.8mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
@@ -697,7 +703,8 @@
 
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
-  \vspace{-4.0mm}
+  % Tighten space between title/position block and items
+  \vspace{-3.0mm}
   \begin{justify}
   \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
@@ -705,7 +712,8 @@
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-4.0mm}
+  % Slightly reduce space after items
+  \vspace{-1.0mm}
 }
 
 
@@ -765,21 +773,18 @@
  %-------------------------------------------------------------------------------
  %                Bibliography
  %-------------------------------------------------------------------------------
- %\RequirePackage[style=verbose, maxnames=99, sorting=ydnt]{biblatex}
+ % Using authoryear style with APA-like formatting for FRQ compliance
  \RequirePackage[ % BibLaTeX
- 	sorting=ydnt, % Sorts entries by year (descending order), name, title
- 	style=verbose,
- 	doi=false,
- 	isbn=true,
- 	url=false,
- 	eprint=false,
- 	backref = false, % include back references in bibliography
- 	maxcitenames=3, % affects only the citations in the document body
- 	maxbibnames=99, % affects only the bibliography, pass 99 to print all
- 	hyperref=true,
- 	block=none,
- 	backend=biber % {Options: bibtex, biber}
- 	]{biblatex}
+	sorting=ydnt, % Sorts entries by year (descending order), name, title
+	style=authoryear,
+	dashed=false,
+	maxcitenames=99, % affects only the citations in the document body
+	maxbibnames=99, % affects only the bibliography, pass 99 to print all
+	uniquename=init,
+	uniquelist=false,
+	hyperref=true,
+	backend=biber % {Options: bibtex, biber}
+	]{biblatex}
 
  % Avoid splitting entries across page break (only for 3 or fewer lines)
  % Tip: http://tex.stackexchange.com/a/51261
@@ -789,123 +794,28 @@
     \widowpenalty10000
     \interlinepenalty5000}
 
- % Customized format, based on Fancy CV template created by Adrien Friggeri
- \DeclareFieldFormat[article]{title}{#1\par}
- \DeclareFieldFormat[inproceedings]{title}{#1\par}
- \DeclareFieldFormat[misc]{title}{#1\par}
- \DeclareFieldFormat[report]{title}{#1\par}
- \DeclareFieldFormat[incollection]{title}{#1\par}
+ % Font size adjustment for bibliography to match CV style
+ \renewcommand*{\bibfont}{\fontsize{9pt}{1.1em}\bodyfontlight}
+ 
+ % Adjust spacing between entries for readability
+ \setlength\bibitemsep{0.5\baselineskip}
 
- \DeclareBibliographyDriver{article}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \printfield{title}%
-   \newblock%
-   \printnames{author}%
-   \par%
-   \newblock%
-   {%
-     \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
-     \usebibmacro{journal+issuetitle}%
-     \setunit{\space}%
-     \printfield{pages}%
-     \newunit%
-     \printlist{publisher}%
-     \setunit*{\addcomma\space}%
-     \printfield{year}%
-     \newunit%
-   }
-   \par\vspace{0.3\baselineskip}
- }
+ % APA-like formatting: Remove "In:" before conference/book titles
+ \renewbibmacro{in:}{}
 
- \DeclareBibliographyDriver{inproceedings}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \printfield{title}%
-   \newblock%
-   \printnames{author}%
-   \par%
-   \newblock%
-   {%
-     \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
-     \printfield{booktitle}%
-     \setunit{\addcomma\space}%
-     \printfield{year}%
-     \setunit{\addcomma\space}%
-     \printlist{location}%
-     \newunit%
-   }
-   \par\vspace{0.3\baselineskip}
- }
+ % Format DOI as clickable link
+ \DeclareFieldFormat{doi}{%
+   \mkbibacro{DOI}\addcolon\space
+   \ifhyperref
+     {\href{https://doi.org/#1}{\nolinkurl{#1}}}
+     {\nolinkurl{#1}}}
 
- \DeclareBibliographyDriver{incollection}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \printfield{title}%
-   \newblock%
-   \printnames{author}%
-   \par%
-   \newblock%
-   {%
-     \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
-     \printfield{booktitle}%
-     \setunit{\addcomma\space}%
-     \printfield{year}%
-     \setunit{\addcomma\space}%
-     \printlist{location}%
-     \newunit%
-   }
-   \par\vspace{0.3\baselineskip}
- }
+ % Format URLs properly
+ \DeclareFieldFormat{url}{\mkbibacro{URL}\addcolon\space\url{#1}}
 
- \DeclareBibliographyDriver{misc}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \printfield{title}%
-   \newblock%
-   \printnames{author}%
-   \par%
-   \newblock%
-   {%
-     \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
-     \printfield{booktitle}%
-     \setunit*{\addcomma\space}%
-     \printfield{note}%
-     \setunit*{\addcomma\space}%
-     \printfield{year}%
-     \setunit{\addcomma\space}%
-     \printlist{location}%
-     \newunit%
-   }
-   \par\vspace{0.3\baselineskip}
- }
-
- \DeclareBibliographyDriver{report}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \printfield{title}%
-   \newblock%
-   \printnames{author}%
-   \par%
-   \newblock%
-   {%
-     \fontsize{8pt}{1em}\bodyfontlight\color{graytext}%
-     \printfield{type}%
-     \setunit{\space}%
-     \printfield{number}%
-     \setunit{\addcomma\space}%
-     \printfield{year}%
-     \newunit%
-   }
-   \par\vspace{0.3\baselineskip}
- }
-
- % New syntax for flexible backend (BibLaTeX > v3.3)
- \DeclareNameFormat{author}{%
-   \fontsize{9pt}{1em}\bodyfont%
-   \renewcommand*{\multinamedelim}{\addcomma\addspace}%
-   \nameparts{#1}%
-   \ifthenelse{\value{listcount}=1}
-     {\ifblank{\namepartgiven}{}{\namepartgiven\space}%
-     \namepartfamily}%
-     {\ifblank{\namepartgiven}{}{\namepartgiven\space}%
-     \namepartfamily}%
-   \ifthenelse{\value{listcount}<\value{liststop}}
-   {\addcomma\space}
-   {}
- }
+ % Format arXiv eprints
+ \DeclareFieldFormat{eprint:arxiv}{%
+   arXiv\addcolon\space
+   \ifhyperref
+     {\href{https://arxiv.org/abs/#1}{#1}}
+     {#1}}
