@@ -57,8 +57,8 @@
 % Sans-serif fonts removed for serif/traditional LaTeX style
 % \RequirePackage{roboto}
 % \RequirePackage[default,opentype]{sourcesanspro}
-% Serif fonts for traditional academic CV
-\RequirePackage{libertine}  % Linux Libertine - elegant serif font
+% Using Computer Modern - clean, subtle serifs, classic LaTeX font (always available)
+% No package needed - it's the LaTeX default
 % Math fonts handled by unicode-math (already loaded above)
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
@@ -147,7 +147,7 @@
 %-------------------------------------------------------------------------------
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
-% Updated to use serif fonts for traditional academic style
+% Updated to use Charter - compact serif with subtle serifs
 \newcommand*{\headerfont}{\rmfamily}
 \newcommand*{\headerfontlight}{\rmfamily\mdseries}
 \newcommand*{\footerfont}{\rmfamily}
