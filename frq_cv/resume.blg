@@ -1,0 +1,5 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'resume.blg'
+[64] biber-darwin:342> INFO - === Wed Oct  1, 2025, 16:03:29
+[79] Utils.pm:479> ERROR - resume.bcf is malformed, last biblatex run probably failed. Deleted resume.bbl
+[79] Biber.pm:137> INFO - ERRORS: 1
