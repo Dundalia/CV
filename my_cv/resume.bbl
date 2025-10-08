@@ -129,6 +129,7 @@
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.LG}
       \field{eprinttype}{arXiv}
+      \field{note}{Submitted to Transactions on Machine Learning Research (TMLR)}
       \field{title}{{CADmium}: Fine-Tuning Code Language Models for Text-Driven Sequential {CAD} Design}
       \field{year}{2025}
       \true{nocite}

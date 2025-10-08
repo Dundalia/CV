@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  6 OCT 2025 17:53
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  8 OCT 2025 16:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -292,13 +292,26 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
 \Hy@SectionHShift=\skip66
+) (/usr/local/texlive/2025basic/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box55
+\UL@hyphenbox=\box56
+\UL@skip=\skip67
+\UL@hook=\toks23
+\UL@height=\dimen157
+\UL@pe=\count288
+\UL@pixel=\dimen158
+\ULC@box=\box57
+Package: ulem 2019/11/18
+\ULdepth=\dimen159
 )
+Package hyperref Info: Option `colorlinks' set `true' on input line 37.
+
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count288
+\lrq@indent=\count289
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -306,63 +319,63 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
-\c@tabx@nest=\count289
-\c@listtotal=\count290
-\c@listcount=\count291
-\c@liststart=\count292
-\c@liststop=\count293
-\c@citecount=\count294
-\c@citetotal=\count295
-\c@multicitecount=\count296
-\c@multicitetotal=\count297
-\c@instcount=\count298
-\c@maxnames=\count299
-\c@minnames=\count300
-\c@maxitems=\count301
-\c@minitems=\count302
-\c@citecounter=\count303
-\c@maxcitecounter=\count304
-\c@savedcitecounter=\count305
-\c@uniquelist=\count306
-\c@uniquename=\count307
-\c@refsection=\count308
-\c@refsegment=\count309
-\c@maxextratitle=\count310
-\c@maxextratitleyear=\count311
-\c@maxextraname=\count312
-\c@maxextradate=\count313
-\c@maxextraalpha=\count314
-\c@abbrvpenalty=\count315
-\c@highnamepenalty=\count316
-\c@lownamepenalty=\count317
-\c@maxparens=\count318
-\c@parenlevel=\count319
-\blx@tempcnta=\count320
-\blx@tempcntb=\count321
-\blx@tempcntc=\count322
-\c@blx@maxsection=\count323
-\blx@maxsegment@0=\count324
-\blx@notetype=\count325
-\blx@parenlevel@text=\count326
-\blx@parenlevel@foot=\count327
-\blx@sectionciteorder@0=\count328
-\blx@sectionciteorderinternal@0=\count329
-\blx@entrysetcounter=\count330
-\blx@biblioinstance=\count331
-\labelnumberwidth=\skip67
-\labelalphawidth=\skip68
-\biblabelsep=\skip69
-\bibitemsep=\skip70
-\bibnamesep=\skip71
-\bibinitsep=\skip72
-\bibparsep=\skip73
-\bibhang=\skip74
+\c@tabx@nest=\count290
+\c@listtotal=\count291
+\c@listcount=\count292
+\c@liststart=\count293
+\c@liststop=\count294
+\c@citecount=\count295
+\c@citetotal=\count296
+\c@multicitecount=\count297
+\c@multicitetotal=\count298
+\c@instcount=\count299
+\c@maxnames=\count300
+\c@minnames=\count301
+\c@maxitems=\count302
+\c@minitems=\count303
+\c@citecounter=\count304
+\c@maxcitecounter=\count305
+\c@savedcitecounter=\count306
+\c@uniquelist=\count307
+\c@uniquename=\count308
+\c@refsection=\count309
+\c@refsegment=\count310
+\c@maxextratitle=\count311
+\c@maxextratitleyear=\count312
+\c@maxextraname=\count313
+\c@maxextradate=\count314
+\c@maxextraalpha=\count315
+\c@abbrvpenalty=\count316
+\c@highnamepenalty=\count317
+\c@lownamepenalty=\count318
+\c@maxparens=\count319
+\c@parenlevel=\count320
+\blx@tempcnta=\count321
+\blx@tempcntb=\count322
+\blx@tempcntc=\count323
+\c@blx@maxsection=\count324
+\blx@maxsegment@0=\count325
+\blx@notetype=\count326
+\blx@parenlevel@text=\count327
+\blx@parenlevel@foot=\count328
+\blx@sectionciteorder@0=\count329
+\blx@sectionciteorderinternal@0=\count330
+\blx@entrysetcounter=\count331
+\blx@biblioinstance=\count332
+\labelnumberwidth=\skip68
+\labelalphawidth=\skip69
+\biblabelsep=\skip70
+\bibitemsep=\skip71
+\bibnamesep=\skip72
+\bibinitsep=\skip73
+\bibparsep=\skip74
+\bibhang=\skip75
 \blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language23
-\c@mincomprange=\count332
-\c@maxcomprange=\count333
-\c@mincompwidth=\count334
+\c@mincomprange=\count333
+\c@maxcomprange=\count334
+\c@mincompwidth=\count335
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -373,88 +386,88 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'authoryear.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count335
-\c@savedafterword=\count336
-\c@annotator=\count337
-\c@savedannotator=\count338
-\c@author=\count339
-\c@savedauthor=\count340
-\c@bookauthor=\count341
-\c@savedbookauthor=\count342
-\c@commentator=\count343
-\c@savedcommentator=\count344
-\c@editor=\count345
-\c@savededitor=\count346
-\c@editora=\count347
-\c@savededitora=\count348
-\c@editorb=\count349
-\c@savededitorb=\count350
-\c@editorc=\count351
-\c@savededitorc=\count352
-\c@foreword=\count353
-\c@savedforeword=\count354
-\c@holder=\count355
-\c@savedholder=\count356
-\c@introduction=\count357
-\c@savedintroduction=\count358
-\c@namea=\count359
-\c@savednamea=\count360
-\c@nameb=\count361
-\c@savednameb=\count362
-\c@namec=\count363
-\c@savednamec=\count364
-\c@translator=\count365
-\c@savedtranslator=\count366
-\c@shortauthor=\count367
-\c@savedshortauthor=\count368
-\c@shorteditor=\count369
-\c@savedshorteditor=\count370
-\c@labelname=\count371
-\c@savedlabelname=\count372
-\c@institution=\count373
-\c@savedinstitution=\count374
-\c@lista=\count375
-\c@savedlista=\count376
-\c@listb=\count377
-\c@savedlistb=\count378
-\c@listc=\count379
-\c@savedlistc=\count380
-\c@listd=\count381
-\c@savedlistd=\count382
-\c@liste=\count383
-\c@savedliste=\count384
-\c@listf=\count385
-\c@savedlistf=\count386
-\c@location=\count387
-\c@savedlocation=\count388
-\c@organization=\count389
-\c@savedorganization=\count390
-\c@origlocation=\count391
-\c@savedoriglocation=\count392
-\c@origpublisher=\count393
-\c@savedorigpublisher=\count394
-\c@publisher=\count395
-\c@savedpublisher=\count396
-\c@language=\count397
-\c@savedlanguage=\count398
-\c@origlanguage=\count399
-\c@savedoriglanguage=\count400
-\c@pageref=\count401
-\c@savedpageref=\count402
-\shorthandwidth=\skip75
-\shortjournalwidth=\skip76
-\shortserieswidth=\skip77
-\shorttitlewidth=\skip78
-\shortauthorwidth=\skip79
-\shorteditorwidth=\skip80
-\locallabelnumberwidth=\skip81
-\locallabelalphawidth=\skip82
-\localshorthandwidth=\skip83
-\localshortjournalwidth=\skip84
-\localshortserieswidth=\skip85
-\localshorttitlewidth=\skip86
-\localshortauthorwidth=\skip87
-\localshorteditorwidth=\skip88
+\c@afterword=\count336
+\c@savedafterword=\count337
+\c@annotator=\count338
+\c@savedannotator=\count339
+\c@author=\count340
+\c@savedauthor=\count341
+\c@bookauthor=\count342
+\c@savedbookauthor=\count343
+\c@commentator=\count344
+\c@savedcommentator=\count345
+\c@editor=\count346
+\c@savededitor=\count347
+\c@editora=\count348
+\c@savededitora=\count349
+\c@editorb=\count350
+\c@savededitorb=\count351
+\c@editorc=\count352
+\c@savededitorc=\count353
+\c@foreword=\count354
+\c@savedforeword=\count355
+\c@holder=\count356
+\c@savedholder=\count357
+\c@introduction=\count358
+\c@savedintroduction=\count359
+\c@namea=\count360
+\c@savednamea=\count361
+\c@nameb=\count362
+\c@savednameb=\count363
+\c@namec=\count364
+\c@savednamec=\count365
+\c@translator=\count366
+\c@savedtranslator=\count367
+\c@shortauthor=\count368
+\c@savedshortauthor=\count369
+\c@shorteditor=\count370
+\c@savedshorteditor=\count371
+\c@labelname=\count372
+\c@savedlabelname=\count373
+\c@institution=\count374
+\c@savedinstitution=\count375
+\c@lista=\count376
+\c@savedlista=\count377
+\c@listb=\count378
+\c@savedlistb=\count379
+\c@listc=\count380
+\c@savedlistc=\count381
+\c@listd=\count382
+\c@savedlistd=\count383
+\c@liste=\count384
+\c@savedliste=\count385
+\c@listf=\count386
+\c@savedlistf=\count387
+\c@location=\count388
+\c@savedlocation=\count389
+\c@organization=\count390
+\c@savedorganization=\count391
+\c@origlocation=\count392
+\c@savedoriglocation=\count393
+\c@origpublisher=\count394
+\c@savedorigpublisher=\count395
+\c@publisher=\count396
+\c@savedpublisher=\count397
+\c@language=\count398
+\c@savedlanguage=\count399
+\c@origlanguage=\count400
+\c@savedoriglanguage=\count401
+\c@pageref=\count402
+\c@savedpageref=\count403
+\shorthandwidth=\skip76
+\shortjournalwidth=\skip77
+\shortserieswidth=\skip78
+\shorttitlewidth=\skip79
+\shortauthorwidth=\skip80
+\shorteditorwidth=\skip81
+\locallabelnumberwidth=\skip82
+\locallabelalphawidth=\skip83
+\localshorthandwidth=\skip84
+\localshortjournalwidth=\skip85
+\localshortserieswidth=\skip86
+\localshorttitlewidth=\skip87
+\localshortauthorwidth=\skip88
+\localshorteditorwidth=\skip89
 Package biblatex Info: Trying to load enhanced support for Unicode engines...
 Package biblatex Info: ... file 'blx-unicode.def' found.
 
@@ -470,19 +483,19 @@ Package biblatex Info: ... file 'biblatex.def' found.
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
-\c@textcitecount=\count403
-\c@textcitetotal=\count404
-\c@textcitemaxnames=\count405
-\c@biburlbigbreakpenalty=\count406
-\c@biburlbreakpenalty=\count407
-\c@biburlnumpenalty=\count408
-\c@biburlucpenalty=\count409
-\c@biburllcpenalty=\count410
+\c@textcitecount=\count404
+\c@textcitetotal=\count405
+\c@textcitemaxnames=\count406
+\c@biburlbigbreakpenalty=\count407
+\c@biburlbreakpenalty=\count408
+\c@biburlnumpenalty=\count409
+\c@biburlucpenalty=\count410
+\c@biburllcpenalty=\count411
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count411
+\c@smartand=\count412
 )
 Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
@@ -494,8 +507,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count412
-\c@bbx:relatedtotal=\count413
+\c@bbx:relatedcount=\count413
+\c@bbx:relatedtotal=\count414
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
@@ -526,31 +539,31 @@ Package biblatex Info: ... and expl3
 (/usr/local/texlive/2025basic/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
 )))
-\@quotelevel=\count414
-\@quotereset=\count415
+\@quotelevel=\count415
+\@quotereset=\count416
  (./resume.aux)
 \openout1 = `resume.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -586,7 +599,7 @@ LaTeX Font Info:    ... okay on input line 70.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 70.
+Package hyperref Info: Link coloring ON on input line 71.
 (./resume.out) (./resume.out)
 \@outlinefile=\write4
 \openout4 = `resume.out'.
@@ -607,41 +620,54 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'resume.bbl' found.
 
 (./resume.bbl)
-Package biblatex Info: Reference section=0 on input line 70.
-Package biblatex Info: Reference segment=0 on input line 70.
+Package biblatex Info: Reference section=0 on input line 71.
+Package biblatex Info: Reference segment=0 on input line 71.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 75.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 75.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 75.
  (./cv/education.tex
 
-LaTeX Font Warning: Font shape `TU/lmr/bx/sc' undefined
-(Font)              using `TU/lmr/bx/n' instead on input line 4.
+LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <14.4> not available
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 4.
+
+
+LaTeX Font Warning: Font shape `TU/lmss/bx/sc' undefined
+(Font)              using `TU/lmss/bx/n' instead on input line 4.
+
+LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 37.
+) (./cv/publications.tex
+
+LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 9.
+
+\blx@maxsegment@1=\count417
+\blx@sectionciteorder@1=\count418
+Package biblatex Info: Reference section=1 on input line 11.
+Package biblatex Info: Setting label 'refsection:1' on input line 11.
+
+LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 14.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 38.
+(Font)              <7> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 38.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 38.
-) (./cv/research.tex) (./cv/publications.tex
-\blx@maxsegment@1=\count416
-\blx@sectionciteorder@1=\count417
-Package biblatex Info: Reference section=1 on input line 10.
-Package biblatex Info: Setting label 'refsection:1' on input line 10.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 13.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 13.
-Package biblatex Info: Reference section=0 on input line 15.
-\blx@maxsegment@2=\count418
-\blx@sectionciteorder@2=\count419
-Package biblatex Info: Reference section=2 on input line 21.
-Package biblatex Info: Setting label 'refsection:2' on input line 21.
-Package biblatex Info: Reference section=0 on input line 26.
-) (./cv/conferences.tex)
-(./cv/experience.tex
+(Font)              <5> on input line 14.
+Package biblatex Info: Reference section=0 on input line 16.
+\blx@maxsegment@2=\count419
+\blx@sectionciteorder@2=\count420
+Package biblatex Info: Reference section=2 on input line 24.
+Package biblatex Info: Setting label 'refsection:2' on input line 24.
+Package biblatex Info: Reference section=0 on input line 29.
+) (./cv/research.tex) (./cv/experience.tex) (./cv/miscellaneous.tex
 
 [1
 
-]) (./cv/miscellaneous.tex) (./cv/achievements.tex) (./cv/skills.tex
-Overfull \hbox (1.64096pt too wide) in alignment at lines 10--35
+]) (./cv/achievements.tex) (./cv/projects.tex) (./cv/skills.tex
+Overfull \hbox (1.64096pt too wide) in alignment at lines 11--25
 [][]
  []
 
@@ -650,11 +676,9 @@ Overfull \hbox (1.64096pt too wide) in alignment at lines 9--21
 [][]
  []
 
-) (./cv/projects.tex
+)
 
-[2])
-
-[3] (./resume.aux)
+[2] (./resume.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -670,12 +694,12 @@ Package logreq Info: Writing requests to 'resume.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18876 strings out of 475366
- 327590 string characters out of 5762340
- 1194427 words of memory out of 5000000
- 41633 multiletter control sequences out of 15000+600000
- 562088 words of font info for 65 fonts, out of 8000000 for 9000
+ 18969 strings out of 475366
+ 328711 string characters out of 5762340
+ 1202860 words of memory out of 5000000
+ 41723 multiletter control sequences out of 15000+600000
+ 562194 words of font info for 66 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 87i,11n,93p,695b,4951s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,12n,93p,695b,5009s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on resume.pdf (3 pages).
+Output written on resume.pdf (2 pages).

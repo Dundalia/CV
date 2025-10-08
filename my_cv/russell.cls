@@ -25,6 +25,23 @@
 \RequirePackage{graphicx}  % For \includegraphics
 \RequirePackage{fontawesome5}
 \RequirePackage{hyperref}
+\RequirePackage{ulem}
+
+% Hyperref configuration - underlined links without boxes
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black,
+    pdfborder={0 0 0},
+}
+
+% Make all URLs underlined
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\uline{#2}}}
+
+% Sans serif font
+\renewcommand{\familydefault}{\sfdefault}
 
 % Bibliography
 \RequirePackage[
@@ -82,6 +99,7 @@
 \newcommand*{\homepage}[1]{\def\@homepage{#1}}
 \newcommand*{\github}[1]{\def\@github{#1}}
 \newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
+\newcommand*{\googlescholar}[1]{\def\@googlescholar{#1}}
 \newcommand*{\mobile}[1]{\def\@mobile{#1}}
 \newcommand*{\position}[1]{\def\@position{#1}}
 \newcommand*{\address}[1]{\def\@address{#1}}
@@ -90,19 +108,31 @@
 %                Header and footer
 %-------------------------------------------------------------------------------
 \newcommand*{\makecvheader}[1][C]{%
-  \begin{center}
+  \def\@headeralign{#1}%
+  \ifstrequal{#1}{L}{\raggedright}{}%
+  \ifstrequal{#1}{R}{\raggedleft}{}%
+  \ifstrequal{#1}{C}{\centering}{}%
+  
+  \ifx\@position\undefined
     {\fontsize{24pt}{1em}\bfseries\@firstname~\@lastname}
-    
-    \vspace{3mm}
-    
-    {\small%
-      \ifx\@email\undefined\else\faEnvelope~\href{mailto:\@email}{\@email}\fi%
-      \ifx\@homepage\undefined\else\acvHeaderSocialSep\faHome~\href{http://\@homepage}{\@homepage}\fi%
-      \ifx\@github\undefined\else\acvHeaderSocialSep\faGithub~\href{https://\@github}{github}\fi%
-      \ifx\@linkedin\undefined\else\acvHeaderSocialSep\faLinkedin~\href{https://www.\@linkedin}{linkedin}\fi%
-    }
-  \end{center}
-  \vspace{5mm}
+  \else
+    \noindent
+    \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+      {\fontsize{24pt}{1em}\bfseries\@firstname~\@lastname} & {\fontsize{12pt}{1em}\selectfont\@position}
+    \end{tabular*}
+  \fi
+  
+  \vspace{1.5mm}
+  
+  {\small%
+    \ifx\@email\undefined\else\faEnvelope~\href{mailto:\@email}{\@email}\fi%
+    \ifx\@homepage\undefined\else\acvHeaderSocialSep\faHome~\href{http://\@homepage}{\@homepage}\fi%
+    \ifx\@github\undefined\else\acvHeaderSocialSep\faGithub~\href{https://\@github}{github}\fi%
+    \ifx\@linkedin\undefined\else\acvHeaderSocialSep\faLinkedin~\href{https://www.\@linkedin}{linkedin}\fi%
+    \ifx\@googlescholar\undefined\else\acvHeaderSocialSep\faGraduationCap~\href{\@googlescholar}{scholar}\fi%
+  }
+  \par
+  \vspace{3mm}
 }
 
 \newcommand*{\makecvfooter}[3]{%
@@ -115,7 +145,7 @@
 %                Section command
 %-------------------------------------------------------------------------------
 \newcommand{\cvsection}[1]{%
-  \vspace{2mm}
+  \vspace{1.5mm}
   \noindent{\Large\scshape\bfseries\@sectioncolor #1}
   \par\nobreak
   \vspace{-3.0mm}
@@ -124,7 +154,7 @@
 }
 
 \newcommand{\cvsubsection}[1]{%
-  \vspace{1.5mm}
+  \vspace{1mm}
   {\noindent\large\scshape #1}
   \vspace{.5mm}
   \par\nobreak
