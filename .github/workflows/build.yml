@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # Edit here with the names of your latex file and directory (can use ".")
-      DIR: .
-      FILE: cv
+      DIR: my_cv
+      FILE: resume
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
