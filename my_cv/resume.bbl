@@ -19,6 +19,67 @@
 
 \refsection{1}
   \datalist[entry]{ydnt/global//global/global/global}
+    \entry{govindarajan2025cadmium}{article}{}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=f288c406c04a85ac292a30be85a05fa5}{%
+           family={Govindarajan},
+           familyi={G\bibinitperiod},
+           given={Prashant},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3ee72002d0d1225591bfb1053806e974}{%
+           family={\textbf{Baldelli,\bibnamedelimb Davide}},
+           familyi={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=195a8665e1395052948f9af0ce4d3f37}{%
+           family={Pathak},
+           familyi={P\bibinitperiod},
+           given={Jay},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=de40290534f565e873d5eab079d20013}{%
+           family={Fournier},
+           familyi={F\bibinitperiod},
+           given={Quentin},
+           giveni={Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5fc5e175d6caeca6cf596c994cc02cd8}{%
+           family={Chandar},
+           familyi={C\bibinitperiod},
+           given={Sarath},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{dcb8fe0b42845e3dab1fcb2a10858db3}
+      \strng{fullhash}{dcb8fe0b42845e3dab1fcb2a10858db3}
+      \strng{fullhashraw}{dcb8fe0b42845e3dab1fcb2a10858db3}
+      \strng{bibnamehash}{dcb8fe0b42845e3dab1fcb2a10858db3}
+      \strng{authorbibnamehash}{dcb8fe0b42845e3dab1fcb2a10858db3}
+      \strng{authornamehash}{dcb8fe0b42845e3dab1fcb2a10858db3}
+      \strng{authorfullhash}{dcb8fe0b42845e3dab1fcb2a10858db3}
+      \strng{authorfullhashraw}{dcb8fe0b42845e3dab1fcb2a10858db3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Transactions on Machine Learning Research}
+      \field{note}{arXiv:2507.09792}
+      \field{title}{{CADmium}: Fine-Tuning Code Language Models for Text-Driven Sequential {CAD} Design}
+      \field{year}{2025}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://openreview.net/forum?id=lExqWvQht8
+      \endverb
+      \verb{url}
+      \verb https://openreview.net/forum?id=lExqWvQht8
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+
+\refsection{2}
+  \datalist[entry]{ydnt/global//global/global/global}
     \entry{Baldelli2024TWOLAR}{inproceedings}{}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=3ee72002d0d1225591bfb1053806e974}{%
@@ -76,71 +137,6 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1007/978-3-031-56027-9_29
-      \endverb
-    \endentry
-  \enddatalist
-\endrefsection
-
-\refsection{2}
-  \datalist[entry]{ydnt/global//global/global/global}
-    \entry{govindarajan2025cadmium}{misc}{}{}
-      \name{author}{5}{}{%
-        {{un=0,uniquepart=base,hash=f288c406c04a85ac292a30be85a05fa5}{%
-           family={Govindarajan},
-           familyi={G\bibinitperiod},
-           given={Prashant},
-           giveni={P\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=3ee72002d0d1225591bfb1053806e974}{%
-           family={\textbf{Baldelli,\bibnamedelimb Davide}},
-           familyi={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{un=0,uniquepart=base,hash=195a8665e1395052948f9af0ce4d3f37}{%
-           family={Pathak},
-           familyi={P\bibinitperiod},
-           given={Jay},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=de40290534f565e873d5eab079d20013}{%
-           family={Fournier},
-           familyi={F\bibinitperiod},
-           given={Quentin},
-           giveni={Q\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=5fc5e175d6caeca6cf596c994cc02cd8}{%
-           family={Chandar},
-           familyi={C\bibinitperiod},
-           given={Sarath},
-           giveni={S\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{dcb8fe0b42845e3dab1fcb2a10858db3}
-      \strng{fullhash}{dcb8fe0b42845e3dab1fcb2a10858db3}
-      \strng{fullhashraw}{dcb8fe0b42845e3dab1fcb2a10858db3}
-      \strng{bibnamehash}{dcb8fe0b42845e3dab1fcb2a10858db3}
-      \strng{authorbibnamehash}{dcb8fe0b42845e3dab1fcb2a10858db3}
-      \strng{authornamehash}{dcb8fe0b42845e3dab1fcb2a10858db3}
-      \strng{authorfullhash}{dcb8fe0b42845e3dab1fcb2a10858db3}
-      \strng{authorfullhashraw}{dcb8fe0b42845e3dab1fcb2a10858db3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.LG}
-      \field{eprinttype}{arXiv}
-      \field{note}{Submitted to Transactions on Machine Learning Research (TMLR)}
-      \field{title}{{CADmium}: Fine-Tuning Code Language Models for Text-Driven Sequential {CAD} Design}
-      \field{year}{2025}
-      \true{nocite}
-      \verb{eprint}
-      \verb 2507.09792
-      \endverb
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2507.09792
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2507.09792
       \endverb
     \endentry
   \enddatalist
