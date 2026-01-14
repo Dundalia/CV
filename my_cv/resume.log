@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  21 DEC 2025 13:08
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  14 JAN 2026 09:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -640,33 +640,30 @@ LaTeX Font Warning: Font shape `TU/lmss/bx/sc' undefined
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 37.
 ) (./cv/publications.tex
-
-LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 9.
-
 \blx@maxsegment@1=\count417
 \blx@sectionciteorder@1=\count418
-Package biblatex Info: Reference section=1 on input line 11.
-Package biblatex Info: Setting label 'refsection:1' on input line 11.
+Package biblatex Info: Reference section=1 on input line 7.
+Package biblatex Info: Setting label 'refsection:1' on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 12.
+
 
 LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <10> not available
-(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 14.
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 12.
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 14.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 14.
-Package biblatex Info: Reference section=0 on input line 16.
-\blx@maxsegment@2=\count419
-\blx@sectionciteorder@2=\count420
-Package biblatex Info: Reference section=2 on input line 24.
-Package biblatex Info: Setting label 'refsection:2' on input line 24.
-Package biblatex Info: Reference section=0 on input line 29.
-) (./cv/research.tex) (./cv/experience.tex) (./cv/miscellaneous.tex
+Package biblatex Info: Reference section=0 on input line 14.
+) (./cv/research.tex) (./cv/experience.tex
 
 [1
 
-]) (./cv/achievements.tex) (./cv/projects.tex) (./cv/skills.tex
+]) (./cv/miscellaneous.tex) (./cv/achievements.tex
+
+LaTeX Font Warning: Font shape `TU/lmss/m/sc' in size <12> not available
+(Font)              Font shape `TU/lmr/m/sc' tried instead on input line 14.
+
+) (./cv/projects.tex) (./cv/skills.tex
 Overfull \hbox (1.64096pt too wide) in alignment at lines 11--25
 [][]
  []
@@ -694,12 +691,12 @@ Package logreq Info: Writing requests to 'resume.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18969 strings out of 475366
- 328714 string characters out of 5762340
- 1202860 words of memory out of 5000000
- 41723 multiletter control sequences out of 15000+600000
+ 18958 strings out of 475366
+ 328618 string characters out of 5762340
+ 1204928 words of memory out of 5000000
+ 41712 multiletter control sequences out of 15000+600000
  562194 words of font info for 66 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 87i,11n,93p,695b,4978s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 87i,11n,93p,695b,5003s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on resume.pdf (2 pages).

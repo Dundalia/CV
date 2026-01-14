@@ -2381,16 +2381,8 @@
   </bcf:bibdata>
   <bcf:section number="1">
     <bcf:citekey order="1" intorder="1" nocite="1">govindarajan2025cadmium</bcf:citekey>
-  </bcf:section>
-  <!-- SECTION 0 (cont.) -->
-  <bcf:section number="0">
-  </bcf:section>
-  <!-- SECTION 2 -->
-  <bcf:bibdata section="2">
-    <bcf:datasource type="file" datatype="bibtex" glob="false">cv/references.bib</bcf:datasource>
-  </bcf:bibdata>
-  <bcf:section number="2">
-    <bcf:citekey order="1" intorder="1" nocite="1">Baldelli2024TWOLAR</bcf:citekey>
+    <bcf:citekey order="2" intorder="2" nocite="1">Baldelli2024TWOLAR</bcf:citekey>
+    <bcf:citekey order="3" intorder="3" nocite="1">baldelli2026llmscantplayhangman</bcf:citekey>
   </bcf:section>
   <!-- SECTION 0 (cont.) -->
   <bcf:section number="0">
@@ -2423,16 +2415,6 @@
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
   <bcf:datalist section="1"
-                name="ydnt/global//global/global/global"
-                type="entry"
-                sortingtemplatename="ydnt"
-                sortingnamekeytemplatename="global"
-                labelprefix=""
-                uniquenametemplatename="global"
-                labelalphanametemplatename="global"
-                namehashtemplatename="global">
-  </bcf:datalist>
-  <bcf:datalist section="2"
                 name="ydnt/global//global/global/global"
                 type="entry"
                 sortingtemplatename="ydnt"

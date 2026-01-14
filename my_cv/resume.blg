@@ -1,25 +1,17 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'resume.blg'
-[63] biber-darwin:342> INFO - === Sun Dec 21, 2025, 13:08:40
-[75] Biber.pm:421> INFO - Reading 'resume.bcf'
-[153] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
-[154] Biber.pm:1002> INFO - Found 1 citekeys in bib section 1
-[154] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
-[154] Biber.pm:1002> INFO - Found 1 citekeys in bib section 2
-[154] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
-[177] Biber.pm:4487> INFO - Processing section 1
-[185] Biber.pm:4678> INFO - Looking for bibtex file 'cv/references.bib' for section 1
-[186] bibtex.pm:1713> INFO - LaTeX decoding ...
-[189] bibtex.pm:1519> INFO - Found BibTeX data source 'cv/references.bib'
-[223] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[224] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[224] Biber.pm:4307> INFO - Sorting list 'ydnt/global//global/global/global' of type 'entry' with template 'ydnt' and locale 'en-US'
-[224] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[229] Biber.pm:4487> INFO - Processing section 2
-[229] Biber.pm:4678> INFO - Looking for bibtex file 'cv/references.bib' for section 2
-[243] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[243] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[243] Biber.pm:4307> INFO - Sorting list 'ydnt/global//global/global/global' of type 'entry' with template 'ydnt' and locale 'en-US'
-[243] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[63] biber-darwin:342> INFO - === Wed Jan 14, 2026, 09:22:38
+[78] Biber.pm:421> INFO - Reading 'resume.bcf'
+[155] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
+[155] Biber.pm:1002> INFO - Found 3 citekeys in bib section 1
+[155] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
+[173] Biber.pm:4487> INFO - Processing section 1
+[182] Biber.pm:4678> INFO - Looking for bibtex file 'cv/references.bib' for section 1
+[183] bibtex.pm:1713> INFO - LaTeX decoding ...
+[187] bibtex.pm:1519> INFO - Found BibTeX data source 'cv/references.bib'
+[237] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[237] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[237] Biber.pm:4307> INFO - Sorting list 'ydnt/global//global/global/global' of type 'entry' with template 'ydnt' and locale 'en-US'
+[237] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
 [245] bbl.pm:676> INFO - Writing 'resume.bbl' with encoding 'UTF-8'
-[247] bbl.pm:779> INFO - Output to resume.bbl
+[248] bbl.pm:779> INFO - Output to resume.bbl

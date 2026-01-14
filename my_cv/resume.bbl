@@ -19,6 +19,59 @@
 
 \refsection{1}
   \datalist[entry]{ydnt/global//global/global/global}
+    \entry{baldelli2026llmscantplayhangman}{misc}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=194cf15d98931f46dfce6e48e6517b94}{%
+           family={\textbf{Davide\bibnamedelimb Baldelli}},
+           familyi={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=66d847db61682d108f6166fc69782308}{%
+           family={Parviz},
+           familyi={P\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dac928d4c4d27a7339c0049d578ad99d}{%
+           family={Zouaq},
+           familyi={Z\bibinitperiod},
+           given={Amal},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5fc5e175d6caeca6cf596c994cc02cd8}{%
+           family={Chandar},
+           familyi={C\bibinitperiod},
+           given={Sarath},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fdf3d79463fcc0a38376eb48e67e9c5a}
+      \strng{fullhash}{fdf3d79463fcc0a38376eb48e67e9c5a}
+      \strng{fullhashraw}{fdf3d79463fcc0a38376eb48e67e9c5a}
+      \strng{bibnamehash}{fdf3d79463fcc0a38376eb48e67e9c5a}
+      \strng{authorbibnamehash}{fdf3d79463fcc0a38376eb48e67e9c5a}
+      \strng{authornamehash}{fdf3d79463fcc0a38376eb48e67e9c5a}
+      \strng{authorfullhash}{fdf3d79463fcc0a38376eb48e67e9c5a}
+      \strng{authorfullhashraw}{fdf3d79463fcc0a38376eb48e67e9c5a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{title}{LLMs Can't Play Hangman: On the Necessity of a Private Working Memory for Language Agents}
+      \field{year}{2026}
+      \true{nocite}
+      \verb{eprint}
+      \verb 2601.06973
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2601.06973
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2601.06973
+      \endverb
+    \endentry
     \entry{govindarajan2025cadmium}{article}{}{}
       \name{author}{5}{}{%
         {{un=0,uniquepart=base,hash=f288c406c04a85ac292a30be85a05fa5}{%
@@ -75,11 +128,6 @@
       \verb https://openreview.net/forum?id=lExqWvQht8
       \endverb
     \endentry
-  \enddatalist
-\endrefsection
-
-\refsection{2}
-  \datalist[entry]{ydnt/global//global/global/global}
     \entry{Baldelli2024TWOLAR}{inproceedings}{}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=3ee72002d0d1225591bfb1053806e974}{%
