@@ -59,6 +59,7 @@
       \field{labeltitlesource}{title}
       \field{eprintclass}{cs.CL}
       \field{eprinttype}{arXiv}
+      \field{note}{Submitted to ACL 2026}
       \field{title}{LLMs Can't Play Hangman: On the Necessity of a Private Working Memory for Language Agents}
       \field{year}{2026}
       \true{nocite}
