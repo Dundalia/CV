@@ -22,23 +22,37 @@ build_cv() {
     echo "========================================"
     
     # First pass: Generate auxiliary files
-    echo "[1/4] Running XeLaTeX (first pass)..."
+    echo "[1/5] Running XeLaTeX (first pass)..."
     xelatex -interaction=nonstopmode -halt-on-error "${MAIN_FILE}.tex"
     
     # Process bibliography
-    echo "[2/4] Running Biber..."
+    echo "[2/5] Running Biber..."
     biber "${MAIN_FILE}"
     
     # Second pass: Resolve references
-    echo "[3/4] Running XeLaTeX (second pass)..."
+    echo "[3/5] Running XeLaTeX (second pass)..."
     xelatex -interaction=nonstopmode -halt-on-error "${MAIN_FILE}.tex"
     
     # Third pass: Final polish
-    echo "[4/4] Running XeLaTeX (third pass)..."
+    echo "[4/5] Running XeLaTeX (third pass)..."
     xelatex -interaction=nonstopmode -halt-on-error "${MAIN_FILE}.tex"
     
     echo ""
-    echo "✓ Build complete! Output: ${MAIN_FILE}.pdf"
+    echo "✓ PDF complete! Output: ${MAIN_FILE}.pdf"
+    
+    # Generate Markdown version
+    echo "[5/5] Generating Markdown version..."
+    python3 generate_md.py
+    
+    # Copy to Obsidian vault
+    OBSIDIAN_PATH="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Vault/Career/Profile"
+    if [ -d "$OBSIDIAN_PATH" ]; then
+        cp "${MAIN_FILE}.md" "$OBSIDIAN_PATH/${MAIN_FILE}.md"
+        echo "✓ Copied to Obsidian vault"
+    else
+        echo "⚠ Obsidian vault path not found, skipping copy"
+    fi
+    
     echo "========================================"
 }
 
@@ -52,8 +66,9 @@ clean_aux() {
 
 clean_all() {
     clean_aux
-    echo "Removing PDF output..."
+    echo "Removing PDF and Markdown outputs..."
     rm -f "${MAIN_FILE}.pdf"
+    rm -f "${MAIN_FILE}.md"
     echo "✓ All generated files removed"
 }
 
