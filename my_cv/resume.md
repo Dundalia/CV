@@ -36,7 +36,7 @@
 
 - **[LLMs Can't Play Hangman: On the Necessity of a Private Working Memory for Language Agents](https://arxiv.org/abs/2601.06973)** (2025)
   - **Davide Baldelli**, Ali Parviz, Amal Zouaq, Sarath Chandar
-  - *Submitted to ACL 2026*
+  - *Accepted to ICLR 2026 Workshop MemAgents: Workshop on Memory for LLM-Based Agentic Systems*
 
 ## 🔬 Research Experience
 
@@ -105,7 +105,7 @@
 
 - Built a comprehensive full-stack platform for creating and deploying custom AI agents (like DeepResearch) using modern web technologies. Frontend developed with Next.js, React, and TypeScript. Backend implemented with FastAPI and LangGraph framework, supporting multiple AI models.
 
-### [Choosr -- Career Orientation Platform](https://choosr.it/esplora-carriere)
+### [UILO -- Career Orientation Platform](https://www.uilo.it)
 **Creator and Lead Developer** | Remote | *Sept 2024 -- Present*
 
 - Designed and implemented the entire technical stack for a career guidance platform helping Italian high school students navigate university choices.
@@ -129,4 +129,4 @@
 - **Italian:** Native proficiency
 
 ---
-*Last updated: February 2026*
+*Last updated: March 2026*
