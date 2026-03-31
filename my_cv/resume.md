@@ -69,7 +69,6 @@
 
 - Co-supervised a master's thesis titled ["Self Assessment Tool for Medical Exam Candidates"](https://thesis.unipd.it/handle/20.500.12608/70905) in collaboration with the University of Padova.
 - Conducted project on Musical Deepfake Detection achieving 94% of F1 score on a proprietary dataset.
-- Implemented BERT-based email classifier for an italian University's administration, achieving 98% accuracy.
 
 ## 🤝 Service and Leadership
 
@@ -90,6 +89,7 @@
 
 ### Awards and Recognitions
 
+- **Selected Participant** - MATS 2026 | Berkeley, CA | *Jun 2026*
 - **Selected Participant** - ARENA 7.0 (Alignment Research Engineer Accelerator) | London, UK | *Jan 2026*
 - **Selected Participant** - Y Combinator AI Startup School | San Francisco, CA | *Jun 2025*
 - **4th place** - Loop Q Prize Competition | Italy | *Jun 2022*
