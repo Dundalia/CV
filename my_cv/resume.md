@@ -100,11 +100,6 @@
 
 ## 🚀 Projects
 
-### [Full-Stack AI Agent Platform with LangGraph Integration](https://github.com/Dundalia/agent-studio)
-**Personal Open-Source Project** | Montreal, Canada | *Jul 2025*
-
-- Built a comprehensive full-stack platform for creating and deploying custom AI agents (like DeepResearch) using modern web technologies. Frontend developed with Next.js, React, and TypeScript. Backend implemented with FastAPI and LangGraph framework, supporting multiple AI models.
-
 ### [UILO -- Career Orientation Platform](https://www.uilo.it)
 **Creator and Lead Developer** | Remote | *Sept 2024 -- Present*
 
