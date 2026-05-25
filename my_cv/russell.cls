@@ -23,9 +23,11 @@
 \RequirePackage{enumitem}
 \RequirePackage{verbatim}  % For comment environment
 \RequirePackage{graphicx}  % For \includegraphics
+\RequirePackage{array}
 \RequirePackage{fontawesome5}
 \RequirePackage{hyperref}
 \RequirePackage{ulem}
+\RequirePackage{fontspec}
 
 % Hyperref configuration - underlined links without boxes
 \hypersetup{
@@ -40,8 +42,7 @@
 \let\oldhref\href
 \renewcommand{\href}[2]{\oldhref{#1}{\uline{#2}}}
 
-% Sans serif font
-\renewcommand{\familydefault}{\sfdefault}
+\defaultfontfeatures{Ligatures=TeX}
 
 % Bibliography
 \RequirePackage[
@@ -83,8 +84,18 @@
 %-------------------------------------------------------------------------------
 %                Helper commands
 %-------------------------------------------------------------------------------
-\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
-\newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+\newcommand*{\fontdir}[1][fonts/]{%
+  \def\@fontdir{#1}%
+  \setmainfont{et-book}[
+    Path=\@fontdir/et-book/,
+    UprightFont=et-book-roman-line-figures.ttf,
+    BoldFont=et-book-bold-line-figures.ttf,
+    ItalicFont=et-book-display-italic-old-style-figures.ttf,
+    BoldItalicFont=et-book-display-italic-old-style-figures.ttf
+  ]%
+}
+\newcommand*{\googlescholaricon}{\raisebox{-0.15ex}{\includegraphics[height=1.05em]{images/icons/google-scholar.png}}}
+\newcommand{\acvHeaderSocialSep}{\quad}
 
 % Section color helper
 \def\@sectioncolor#1#2#3{%
@@ -109,56 +120,78 @@
 %-------------------------------------------------------------------------------
 \newcommand*{\makecvheader}[1][C]{%
   \def\@headeralign{#1}%
-  \ifstrequal{#1}{L}{\raggedright}{}%
-  \ifstrequal{#1}{R}{\raggedleft}{}%
-  \ifstrequal{#1}{C}{\centering}{}%
-  
-  \ifx\@position\undefined
-    {\fontsize{24pt}{1em}\bfseries\@firstname~\@lastname}
-  \else
-    \noindent
-    \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
-      {\fontsize{24pt}{1em}\bfseries\@firstname~\@lastname} & {\fontsize{12pt}{1em}\selectfont\@position}
-    \end{tabular*}
+  \begin{center}
+  {\fontsize{24pt}{1em}\bfseries\MakeUppercase{\@firstname~\@lastname}\par}
+  \ifx\@position\undefined\else
+    \vspace{2.0mm}
+    {\fontsize{12pt}{1em}\selectfont\@position\par}
   \fi
-  
   \vspace{1.5mm}
   
-  {\small%
-    \ifx\@email\undefined\else\faEnvelope~\href{mailto:\@email}{\@email}\fi%
-    \ifx\@homepage\undefined\else\acvHeaderSocialSep\faHome~\href{http://\@homepage}{\@homepage}\fi%
-    \ifx\@github\undefined\else\acvHeaderSocialSep\faGithub~\href{https://\@github}{github}\fi%
-    \ifx\@linkedin\undefined\else\acvHeaderSocialSep\faLinkedin~\href{https://www.\@linkedin}{linkedin}\fi%
-    \ifx\@googlescholar\undefined\else\acvHeaderSocialSep\faGraduationCap~\href{\@googlescholar}{scholar}\fi%
+  {\footnotesize%
+    \ifx\@email\undefined\else\faEnvelope~\oldhref{mailto:\@email}{\@email}\fi%
+    \ifx\@homepage\undefined\else\acvHeaderSocialSep\faGlobe~\oldhref{http://\@homepage}{\@homepage}\fi%
+    \ifx\@github\undefined\else\acvHeaderSocialSep\faGithub~\oldhref{https://\@github}{github}\fi%
+    \ifx\@linkedin\undefined\else\acvHeaderSocialSep\faLinkedin~\oldhref{https://www.\@linkedin}{linkedin}\fi%
+    \ifx\@googlescholar\undefined\else\acvHeaderSocialSep\googlescholaricon~\oldhref{\@googlescholar}{scholar}\fi%
   }
   \par
+  \end{center}
   \vspace{3mm}
 }
 
 \newcommand*{\makecvfooter}[3]{%
-  \fancyfoot[L]{{\small\scshape #1}}
-  \fancyfoot[C]{{\small\scshape #2}}
-  \fancyfoot[R]{{\small\scshape #3}}
+  \fancyfoot[L]{{\small #1}}
+  \fancyfoot[C]{{\small #2}}
+  \fancyfoot[R]{{\small #3}}
 }
 
 %-------------------------------------------------------------------------------
 %                Section command
 %-------------------------------------------------------------------------------
 \newcommand{\cvsection}[1]{%
-  \vspace{1.5mm}
-  \noindent{\Large\scshape\bfseries\@sectioncolor #1}
+  \vspace{2.8mm}
+  \noindent{\Large\bfseries\ifbool{acvSectionColorHighlight}{{\color{russell}\MakeUppercase{#1}}}{\MakeUppercase{#1}}}
   \par\nobreak
   \vspace{-3.0mm}
   \noindent{\color{graytext}\hrule height 0.5pt}
-  \vspace{1.5mm}
+  \vspace{2.5mm}
 }
 
 \newcommand{\cvsubsection}[1]{%
   \vspace{1mm}
-  {\noindent\large\scshape #1}
+  {\noindent\large\bfseries #1}
   \vspace{.5mm}
   \par\nobreak
   \vspace{1.5mm}
+}
+
+%-------------------------------------------------------------------------------
+%                Publications
+%-------------------------------------------------------------------------------
+\newenvironment{cvpublications}{%
+  \par\vspace{1mm}
+}{%
+  \par\vspace{1mm}
+}
+
+\newcommand*{\cvpublink}[1]{%
+  \oldhref{#1}{\textcolor{russell-skyblue}{\faLink}}%
+}
+
+\newlength{\cvpubiconwidth}
+\setlength{\cvpubiconwidth}{1.4em}
+
+\newcommand*{\cvpublication}[4][]{%
+  \noindent
+  \begin{minipage}[t]{\textwidth}
+    \noindent
+    \begin{tabular*}{\textwidth}{@{}p{\cvpubiconwidth}@{}p{0.68\textwidth}@{\extracolsep{\fill}}r@{}}
+      #1 & \raggedright\textbf{#2} & {\footnotesize\itshape #4} \\
+      & \multicolumn{2}{@{}p{\dimexpr\textwidth-\cvpubiconwidth\relax}@{}}{{\footnotesize #3}}
+    \end{tabular*}
+  \end{minipage}
+  \par\vspace{1.2mm}
 }
 
 %-------------------------------------------------------------------------------
@@ -174,12 +207,34 @@
 \newcommand*{\cventry}[5]{%
   \vspace{1mm}
   \noindent
-  \begin{tabular*}{\textwidth}{@{}p{0.7\textwidth}@{\extracolsep{\fill}}r@{}}
-    \textbf{#2} & \textit{#3} \\
-    #1 & \textit{#4}
+  \ifstrempty{#1}{%
+    \begin{tabular*}{\textwidth}{@{}p{0.74\textwidth}@{\extracolsep{\fill}}r@{}}
+      \textbf{#2} & \textit{#4}
+    \end{tabular*}
+  }{%
+    \begin{tabular*}{\textwidth}{@{}p{0.74\textwidth}@{\extracolsep{\fill}}r@{}}
+      \textbf{#2} & \textit{#4} \\
+      #1 &
+    \end{tabular*}
+  }%
+  \ifstrempty{#5}{}{%
+    \par\vspace{0.5mm}
+    \noindent#5
+  }%
+  \par\vspace{1mm}
+}
+
+% Compact entry for sections that have no separate role/degree line.
+\newcommand*{\cvpositionentry}[4]{%
+  \vspace{1mm}
+  \noindent
+  \begin{tabular*}{\textwidth}{@{}p{0.74\textwidth}@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \textit{#3}
   \end{tabular*}
-  \par\vspace{0.5mm}
-  \noindent#5
+  \ifstrempty{#4}{}{%
+    \par\vspace{-0.5mm}
+    \noindent#4%
+  }%
   \par\vspace{1mm}
 }
 
@@ -198,7 +253,7 @@
 \newenvironment{cvskills}{%
   % No extra space - handled by \cvsection
   \noindent
-  \begin{tabular*}{\textwidth}{@{}p{0.2\textwidth}p{0.78\textwidth}@{}}
+  \begin{tabular*}{\textwidth}{@{}p{0.18\textwidth}@{\hspace{0.02\textwidth}}>{\raggedright\arraybackslash}p{0.78\textwidth}@{}}
 }{%
   \end{tabular*}
   \par\vspace{2mm}
@@ -214,14 +269,14 @@
 \newenvironment{cvhonors}{%
   % No extra space - handled by \cvsection
   \noindent
-  \begin{tabular*}{\textwidth}{@{}p{0.12\textwidth}p{0.60\textwidth}@{\extracolsep{\fill}}r@{}}
+  \begin{tabular*}{\textwidth}{@{}p{0.74\textwidth}@{\extracolsep{\fill}}r@{}}
 }{%
   \end{tabular*}
   \par\vspace{2mm}
 }
 
 \newcommand*{\cvhonor}[4]{%
-  \textit{#4} & \textbf{#1}, #2 & \textit{#3} \\[3pt]
+  \textbf{#1}, #2 & \textit{#4} \\[3pt]
 }
 
 %-------------------------------------------------------------------------------
@@ -238,4 +293,3 @@
 
 %-------------------------------------------------------------------------------
 \endinput
-

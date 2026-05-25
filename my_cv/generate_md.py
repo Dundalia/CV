@@ -10,6 +10,9 @@ from datetime import datetime
 
 def clean_latex(text: str) -> str:
     """Remove/convert LaTeX commands to Markdown equivalents."""
+    # Handle CV link icon helper: \cvpublink{url} text -> [text](url)
+    text = re.sub(r'\\cvpublink\{([^}]+)\}\s*([^.\n]+)\.', r'[\2](\1).', text)
+
     # Handle href with textbf inside: \href{url}{\textbf{text}} -> [**text**](url)
     text = re.sub(r'\\href\{([^}]+)\}\{\\textbf\{([^}]+)\}\}', r'[**\2**](\1)', text)
     
@@ -137,6 +140,60 @@ def parse_cventry(content: str) -> list:
     return entries
 
 
+def parse_cvpositionentry(content: str) -> list:
+    """Parse compact cvpositionentry blocks from LaTeX content."""
+    entries = []
+    pattern = r'\\cvpositionentry\s*'
+
+    for match in re.finditer(pattern, content):
+        pos = match.end()
+
+        args = []
+        for _ in range(4):
+            while pos < len(content):
+                if content[pos] in ' \t\n':
+                    pos += 1
+                elif content[pos] == '%':
+                    while pos < len(content) and content[pos] != '\n':
+                        pos += 1
+                    if pos < len(content):
+                        pos += 1
+                else:
+                    break
+            if pos < len(content) and content[pos] == '{':
+                arg, pos = extract_brace_content(content, pos)
+                args.append(arg)
+            else:
+                break
+
+        if len(args) == 4:
+            description_block = args[3]
+            items = []
+            item_pattern = r'\\item\s*\{'
+            for item_match in re.finditer(item_pattern, description_block):
+                line_start = description_block.rfind('\n', 0, item_match.start())
+                line_start = 0 if line_start == -1 else line_start + 1
+                line_prefix = description_block[line_start:item_match.start()].strip()
+                if line_prefix.startswith('%'):
+                    continue
+
+                item_content, _ = extract_brace_content(description_block, item_match.end() - 1)
+                if item_content.strip().startswith('%'):
+                    continue
+                item_text = clean_latex(item_content)
+                if item_text:
+                    items.append(item_text)
+
+            entries.append({
+                'title': clean_latex(args[0]),
+                'location': clean_latex(args[1]),
+                'dates': clean_latex(args[2]),
+                'items': items
+            })
+
+    return entries
+
+
 def parse_cvhonor(content: str) -> list:
     """Parse cvhonor blocks from LaTeX content."""
     honors = []
@@ -230,14 +287,11 @@ def parse_bib_entries(content: str) -> list:
     for match in re.finditer(entry_pattern, content, re.DOTALL):
         entry_type = match.group(1)
         entry_key = match.group(2)
-        
-        # Find the end of this entry (next @ or end of file)
-        start_pos = match.end()
-        next_entry = content.find('@', start_pos)
-        if next_entry == -1:
-            entry_text = content[start_pos:]
-        else:
-            entry_text = content[start_pos:next_entry]
+
+        # Extract only this BibTeX entry, without trailing comments or later entries.
+        brace_start = content.find('{', match.start())
+        entry_body, _ = extract_brace_content(content, brace_start)
+        entry_text = entry_body.split(',', 1)[1] if ',' in entry_body else ''
         
         fields = {}
         # Parse fields by looking for field_name = { and using brace extraction
@@ -278,11 +332,11 @@ def generate_markdown():
     md = []
     
     # Header
-    md.append("# Davide Baldelli")
+    md.append("# DAVIDE BALDELLI")
     md.append("")
-    md.append("**PhD in Computer Engineering at Polytechnique Montreal and Mila**")
+    md.append("**PhD researcher at Polytechnique Montréal and Mila**")
     md.append("")
-    md.append("📧 [davide.baldelli@mila.quebec](mailto:davide.baldelli@mila.quebec) • 🌐 [dundalia.github.io](https://dundalia.github.io) • 💼 [LinkedIn](https://linkedin.com/in/davide-baldelli-b55618203/) • 🐙 [GitHub](https://github.com/Dundalia) • 📚 [Google Scholar](https://scholar.google.com/citations?user=PTOykNQAAAAJ&hl=it)")
+    md.append("[davide.baldelli@mila.quebec](mailto:davide.baldelli@mila.quebec) • [dundalia.github.io](https://dundalia.github.io) • [LinkedIn](https://linkedin.com/in/davide-baldelli-b55618203/) • [GitHub](https://github.com/Dundalia) • [Google Scholar](https://scholar.google.com/citations?user=PTOykNQAAAAJ&hl=it)")
     md.append("")
     md.append("---")
     md.append("")
@@ -296,12 +350,12 @@ def generate_markdown():
     entries = parse_cventry(education_content)
     for entry in entries:
         md.append(f"### {entry['title']}")
-        md.append(f"**{entry['organization']}** | {entry['location']} | *{entry['dates']}*")
+        md.append(f"**{entry['organization']}** | *{entry['dates']}*")
         md.append("")
         for item in entry['items']:
             md.append(f"- {item}")
         md.append("")
-    
+
     # Publications
     md.append("## 📄 Publications")
     md.append("")
@@ -340,30 +394,15 @@ def generate_markdown():
             if note:
                 md.append(f"  - *{note}*")
         md.append("")
-    
-    # Research Experience
-    md.append("## 🔬 Research Experience")
+
+    # Positions and Programs
+    md.append("## Positions and Programs")
     md.append("")
-    research_content = (cv_dir / 'research.tex').read_text()
-    entries = parse_cventry(research_content)
+    positions_content = (cv_dir / 'positions.tex').read_text()
+    entries = parse_cvpositionentry(positions_content)
     for entry in entries:
         md.append(f"### {entry['title']}")
-        md.append(f"**{entry['organization']}** | {entry['location']} | *{entry['dates']}*")
-        md.append("")
-        for item in entry['items']:
-            md.append(f"- {item}")
-        md.append("")
-    
-    # Professional Experience
-    md.append("## 💼 Professional Experience")
-    md.append("")
-    experience_content = (cv_dir / 'experience.tex').read_text()
-    # Remove commented blocks
-    experience_content = re.sub(r'\\begin\{comment\}.*?\\end\{comment\}', '', experience_content, flags=re.DOTALL)
-    entries = parse_cventry(experience_content)
-    for entry in entries:
-        md.append(f"### {entry['title']}")
-        md.append(f"**{entry['organization']}** | {entry['location']} | *{entry['dates']}*")
+        md.append(f"*{entry['dates']}*")
         md.append("")
         for item in entry['items']:
             md.append(f"- {item}")
@@ -376,74 +415,22 @@ def generate_markdown():
     entries = parse_cventry(misc_content)
     for entry in entries:
         md.append(f"### {entry['title']}")
-        md.append(f"**{entry['organization']}** | {entry['location']} | *{entry['dates']}*")
+        md.append(f"**{entry['organization']}** | *{entry['dates']}*")
         md.append("")
         for item in entry['items']:
             md.append(f"- {item}")
         md.append("")
     
-    # Achievements
-    md.append("## 🏆 Other Achievements")
+    # Additional Skills, Service, and Achievements
+    md.append("## Additional Skills, Service, and Achievements")
     md.append("")
-    achievements_content = (cv_dir / 'achievements.tex').read_text()
-    
-    # Awards section
-    md.append("### Awards and Recognitions")
+    additional_content = (cv_dir / 'additional.tex').read_text()
+    additional = parse_cvskill(additional_content)
+    for item in additional:
+        md.append(f"- **{item['category']}:** {item['skills']}")
     md.append("")
-    honors = parse_cvhonor(achievements_content)
-    # Split by subsection (first group is awards, second is certifications)
-    awards_section = achievements_content.split(r'\cvsubsection{Certifications}')[0]
-    cert_section = achievements_content.split(r'\cvsubsection{Certifications}')[-1] if r'\cvsubsection{Certifications}' in achievements_content else ""
-    
-    awards = parse_cvhonor(awards_section)
-    for honor in awards:
-        md.append(f"- **{honor['award']}** - {honor['event']} | {honor['location']} | *{honor['date']}*")
-    md.append("")
-    
-    if cert_section:
-        md.append("### Certifications")
-        md.append("")
-        certs = parse_cvhonor(cert_section)
-        for cert in certs:
-            md.append(f"- **{cert['award']}** - {cert['event']} | *{cert['date']}*")
-        md.append("")
-    
-    # Projects
-    md.append("## 🚀 Projects")
-    md.append("")
-    projects_content = (cv_dir / 'projects.tex').read_text()
-    # Remove commented entries
-    projects_content = re.sub(r'%.*\n', '\n', projects_content)
-    entries = parse_cventry(projects_content)
-    for entry in entries:
-        md.append(f"### {entry['organization']}")
-        md.append(f"**{entry['title']}** | {entry['location']} | *{entry['dates']}*")
-        md.append("")
-        for item in entry['items']:
-            md.append(f"- {item}")
-        md.append("")
-    
-    # Skills
-    md.append("## 🛠️ Skills")
-    md.append("")
-    skills_content = (cv_dir / 'skills.tex').read_text()
-    skills = parse_cvskill(skills_content)
-    for skill in skills:
-        md.append(f"- **{skill['category']}:** {skill['skills']}")
-    md.append("")
-    
-    # Languages
-    md.append("## 🌍 Languages")
-    md.append("")
-    languages_content = (cv_dir / 'languages.tex').read_text()
-    languages = parse_cvskill(languages_content)
-    for lang in languages:
-        md.append(f"- **{lang['category']}:** {lang['skills']}")
-    md.append("")
-    
-    # Footer
-    md.append("---")
-    md.append(f"*Last updated: {datetime.now().strftime('%B %Y')}*")
+
+    md.append("*Generated on May 25, 2026. For the latest version, see [dundalia.github.io/CV/cv.pdf](https://dundalia.github.io/CV/cv.pdf).*")
     
     return '\n'.join(md)
 

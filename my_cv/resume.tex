@@ -5,7 +5,7 @@
 \documentclass[11pt, a4paper]{russell}
 
 % Configure page margins with geometry
-\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=1.4cm, top=1.15cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
 % Specify the location of the included fonts
 \fontdir[fonts/]
@@ -27,8 +27,8 @@
 % Set false if you don't want to highlight section with russell color
 \setbool{acvSectionColorHighlight}{true}
 
-% If you would like to change the social information separator from a pipe (|) to something else
-\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+% If you would like to change the social information separator
+\renewcommand{\acvHeaderSocialSep}{\quad}
 
 
 %-------------------------------------------------------------------------------
@@ -38,7 +38,7 @@
 % Available options: circle|rectangle,edge/noedge,left/right
 % \photo[rectangle,edge,right]{./examples/profile}
 \name{Davide}{Baldelli}
-\position{PhD in Computer Engineering at Polytechnique Montreal and Mila}
+\position{PhD researcher at Polytechnique Montréal and Mila}
 % \address{YOUR ADDRESS}
 
 % \mobile{+39 3395059261}
@@ -72,14 +72,7 @@
 
 % Print the header with above personal informations
 % Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader[L]
-
-% Print the footer with 3 arguments(<left>, <center>, <right>)
-% Leave any of these blank if they are not needed
-\makecvfooter
-  {\today}
-  {}
-  {\thepage}
+\makecvheader[C]
 
 %-------------------------------------------------------------------------------
 %	CV/RESUME CONTENT
@@ -88,17 +81,15 @@
 % \input{cv/summary.tex} 
 \input{cv/education.tex}
 \input{cv/publications.tex}
-\input{cv/research.tex}
+\input{cv/positions.tex}
+% \input{cv/research.tex}
 % \input{cv/conferences.tex}
-\input{cv/experience.tex}
 \input{cv/miscellaneous.tex}
-\input{cv/achievements.tex}
-\input{cv/projects.tex}
-\input{cv/skills.tex}
-\input{cv/languages.tex}
+\input{cv/additional.tex}
 %\input{cv/interests.tex}
 
 \vspace*{\fill}
+{\centering\footnotesize Generated on \today. For the latest version, see \href{https://dundalia.github.io/CV/cv.pdf}{dundalia.github.io/CV/cv.pdf}.\par}
 % \centering{\textbf{References available upon request.}}
 %-------------------------------------------------------------------------------
 \end{document}
