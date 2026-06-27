@@ -38,7 +38,7 @@
 
 - **[LLMs Can't Play Hangman: On the Necessity of a Private Working Memory for Language Agents](https://arxiv.org/abs/2601.06973)** (2026)
   - **Davide Baldelli**, Ali Parviz, Amal Zouaq, Sarath Chandar
-  - *Accepted to ICLR 2026 Workshop MemAgents: Workshop on Memory for LLM-Based Agentic Systems*
+  - **
 
 - **[Probabilistic Calibration Is a Trainable Capability in Language Models](https://arxiv.org/abs/2605.11845)** (2026)
   - **Davide Baldelli**, Sruthi Kuriakose, Maryam Hashemzadeh, Amal Zouaq, Sarath Chandar
