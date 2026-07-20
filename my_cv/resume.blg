@@ -1,9 +1,9 @@
-[1] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:328> INFO - This is Biber 2.21
 [1] Config.pm:331> INFO - Logfile is 'resume.blg'
-[104] biber:342> INFO - === Fri Jul  3, 2026, 00:58:25
-[127] Biber.pm:421> INFO - Reading 'resume.bcf'
-[228] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
-[251] bbl.pm:676> INFO - Writing 'resume.bbl' with encoding 'UTF-8'
-[251] bbl.pm:779> INFO - Output to resume.bbl
-[252] Biber.pm:132> WARN - The file 'resume.bcf' does not contain any citations!
-[252] Biber.pm:134> INFO - WARNINGS: 1
+[173] biber:342> INFO - === Mon Jul 20, 2026, 04:19:02
+[217] Biber.pm:421> INFO - Reading 'resume.bcf'
+[396] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
+[436] bbl.pm:676> INFO - Writing 'resume.bbl' with encoding 'UTF-8'
+[436] bbl.pm:779> INFO - Output to resume.bbl
+[437] Biber.pm:132> WARN - The file 'resume.bcf' does not contain any citations!
+[437] Biber.pm:134> INFO - WARNINGS: 1
