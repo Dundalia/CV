@@ -71,6 +71,11 @@
 
 ## 🤝 Service and Leadership
 
+### Research Mentor
+**SPAR (Supervised Program for Alignment Research)** | *Fall 2026*
+
+- Mentoring two research fellows on building robust activation monitors for language models.
+
 ### Web Communication Chair
 **CoLLAs 2026 (Conference on Lifelong Learning Agents)** | *Nov 2025 - Current*
 
