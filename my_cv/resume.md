@@ -45,11 +45,12 @@
 
 ## Positions and Programs
 
-### MATS Fellowship
-*Jun 2026 - Aug 2026*
+### MATS Fellowship (10.0 + 10.1 Extension)
+*Jun 2026 - Present*
 
 - Supervised by Mirko Bronzi and Damiano Fornasiere from LawZero.
 - Investigating introspection capabilities in language models.
+- Selected for the MATS 10.1 extension phase (from Sep 2026) to continue the project.
 
 ### ARENA 7.0 (Alignment Research Engineer Accelerator)
 *Jan 2026*
