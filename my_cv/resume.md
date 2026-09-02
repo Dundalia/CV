@@ -72,6 +72,10 @@
 
 ## 🤝 Service and Leadership
 
+### Teaching Assistant
+**INF8245AE Machine Learning -- Polytechnique Montréal** | *Fall 2026*
+
+
 ### Research Mentor
 **Fatima Al-Fihri Predoctoral Fellowship** | *Fall 2026*
 
