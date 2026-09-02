@@ -73,6 +73,11 @@
 ## 🤝 Service and Leadership
 
 ### Research Mentor
+**[Fatima Al-Fihri Predoctoral Fellowship](https://fatima.institute)** | *Fall 2026*
+
+- Mentoring a fellow on a machine learning research project through the Fatima Institute for Global AI Research, a program supporting prospective PhD applicants from low- and middle-income countries.
+
+### Research Mentor
 **SPAR (Supervised Program for Alignment Research)** | *Fall 2026*
 
 - Mentoring two research fellows on building robust activation monitors for language models.
