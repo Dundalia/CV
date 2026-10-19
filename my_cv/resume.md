@@ -43,6 +43,9 @@
 - **[Probabilistic Calibration Is a Trainable Capability in Language Models](https://arxiv.org/abs/2605.11845)** (2026)
   - **Davide Baldelli**, Sruthi Kuriakose, Maryam Hashemzadeh, Amal Zouaq, Sarath Chandar
 
+- **[Cross-Model In-Context Neurofeedback Reveals (Limited) Activation Control in LLMs](https://arxiv.org/abs/2610.20179)** (2026)
+  - **Davide Baldelli**, Robyn Kozierok, Mirko Bronzi, Damiano Fornasiere
+
 ## Positions and Programs
 
 ### MATS Fellowship (10.0 + 10.1 Extension)
