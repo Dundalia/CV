@@ -175,20 +175,20 @@
   \par\vspace{1mm}
 }
 
-\newcommand*{\cvpublink}[1]{%
-  \oldhref{#1}{\textcolor{russell-skyblue}{\faLink}}%
+% Text link for paper resources: \cvextlink{url}{[code]}
+\newcommand*{\cvextlink}[2]{%
+  \oldhref{#1}{\textcolor{russell-skyblue}{#2}}%
 }
 
-\newlength{\cvpubiconwidth}
-\setlength{\cvpubiconwidth}{1.4em}
-
+% Usage: \cvpublication[links]{title}{authors}{venue}
+% Links (e.g. \cvextlink{url}{[paper]} \cvextlink{url}{[code]}) follow the authors.
 \newcommand*{\cvpublication}[4][]{%
   \noindent
   \begin{minipage}[t]{\textwidth}
     \noindent
-    \begin{tabular*}{\textwidth}{@{}p{\cvpubiconwidth}@{}p{0.68\textwidth}@{\extracolsep{\fill}}r@{}}
-      #1 & \raggedright\textbf{#2} & {\footnotesize\itshape #4} \\
-      & \multicolumn{2}{@{}p{\dimexpr\textwidth-\cvpubiconwidth\relax}@{}}{{\footnotesize #3}}
+    \begin{tabular*}{\textwidth}{@{}p{0.70\textwidth}@{\extracolsep{\fill}}r@{}}
+      \raggedright\textbf{#2} & {\footnotesize\itshape #4} \\
+      \multicolumn{2}{@{}p{\textwidth}@{}}{{\footnotesize #3\ifstrempty{#1}{}{\quad #1}}}
     \end{tabular*}
   \end{minipage}
   \par\vspace{1.2mm}

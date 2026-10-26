@@ -1,0 +1,11 @@
+# Build output: the published PDF is ../cv.pdf
+my_cv/resume.pdf
+
+# LaTeX auxiliary files
+my_cv/*.aux
+my_cv/*.bbl
+my_cv/*.bcf
+my_cv/*.blg
+my_cv/*.log
+my_cv/*.out
+my_cv/*.run.xml

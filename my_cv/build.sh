@@ -37,8 +37,11 @@ build_cv() {
     echo "[4/5] Running XeLaTeX (third pass)..."
     xelatex -interaction=nonstopmode -halt-on-error "${MAIN_FILE}.tex"
     
+    # Publish: the repo-root cv.pdf is the only PDF, served at dundalia.github.io/CV/cv.pdf
+    mv "${MAIN_FILE}.pdf" ../cv.pdf
+
     echo ""
-    echo "✓ PDF complete! Output: ${MAIN_FILE}.pdf"
+    echo "✓ PDF complete! Output: ../cv.pdf"
     
     # Generate Markdown version
     echo "[5/5] Generating Markdown version..."

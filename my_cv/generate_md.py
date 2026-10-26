@@ -10,8 +10,14 @@ from datetime import datetime
 
 def clean_latex(text: str) -> str:
     """Remove/convert LaTeX commands to Markdown equivalents."""
-    # Handle CV link icon helper: \cvpublink{url} text -> [text](url)
-    text = re.sub(r'\\cvpublink\{([^}]+)\}\s*([^.\n]+)\.', r'[\2](\1).', text)
+    # Handle paper resource links: \cvextlink{url}{[code]} -> [code](url)
+    text = re.sub(r'\\cvextlink\{([^}]+)\}\{\[?([^}\]]+)\]?\}', r'[\2](\1)', text)
+
+    # Handle inline math used in the CV
+    text = text.replace('$^*$', '\\*')
+    text = text.replace(r'$\sim$', '~')
+    text = text.replace(r'$\phi$', 'φ')
+    text = text.replace(r'\quad', ' ')
 
     # Handle href with textbf inside: \href{url}{\textbf{text}} -> [**text**](url)
     text = re.sub(r'\\href\{([^}]+)\}\{\\textbf\{([^}]+)\}\}', r'[**\2**](\1)', text)
@@ -140,58 +146,48 @@ def parse_cventry(content: str) -> list:
     return entries
 
 
-def parse_cvpositionentry(content: str) -> list:
-    """Parse compact cvpositionentry blocks from LaTeX content."""
-    entries = []
-    pattern = r'\\cvpositionentry\s*'
+def parse_cvpublication(content: str) -> list:
+    """Parse cvpublication blocks from LaTeX content."""
+    publications = []
+    pattern = r'\\cvpublication\s*'
 
     for match in re.finditer(pattern, content):
         pos = match.end()
 
+        # Optional [links] argument; brackets inside braces (e.g. {[code]}) don't close it
+        links = ''
+        if pos < len(content) and content[pos] == '[':
+            depth = 0
+            end = pos + 1
+            while end < len(content) and not (content[end] == ']' and depth == 0):
+                depth += {'{': 1, '}': -1}.get(content[end], 0)
+                end += 1
+            links = clean_latex(content[pos + 1:end])
+            pos = end + 1
+
+        # Extract 3 brace arguments: title, authors, venue
         args = []
-        for _ in range(4):
-            while pos < len(content):
-                if content[pos] in ' \t\n':
-                    pos += 1
-                elif content[pos] == '%':
-                    while pos < len(content) and content[pos] != '\n':
-                        pos += 1
-                    if pos < len(content):
-                        pos += 1
-                else:
-                    break
+        for _ in range(3):
+            while pos < len(content) and content[pos] in ' \t\n':
+                pos += 1
             if pos < len(content) and content[pos] == '{':
                 arg, pos = extract_brace_content(content, pos)
                 args.append(arg)
             else:
                 break
 
-        if len(args) == 4:
-            description_block = args[3]
-            items = []
-            item_pattern = r'\\item\s*\{'
-            for item_match in re.finditer(item_pattern, description_block):
-                line_start = description_block.rfind('\n', 0, item_match.start())
-                line_start = 0 if line_start == -1 else line_start + 1
-                line_prefix = description_block[line_start:item_match.start()].strip()
-                if line_prefix.startswith('%'):
-                    continue
-
-                item_content, _ = extract_brace_content(description_block, item_match.end() - 1)
-                if item_content.strip().startswith('%'):
-                    continue
-                item_text = clean_latex(item_content)
-                if item_text:
-                    items.append(item_text)
-
-            entries.append({
-                'title': clean_latex(args[0]),
-                'location': clean_latex(args[1]),
-                'dates': clean_latex(args[2]),
-                'items': items
+        if len(args) == 3:
+            title = clean_latex(args[0]).replace('{', '').replace('}', '')
+            venue = re.sub(r'\\begin\{tabular\}(\[[^\]]*\])?\{@\{\}r@\{\}\}|\\end\{tabular\}', '', args[2])
+            venue = '; '.join(clean_latex(v) for v in venue.split('\\\\'))
+            publications.append({
+                'title': title,
+                'links': links,
+                'authors': clean_latex(args[1]),
+                'venue': venue
             })
 
-    return entries
+    return publications
 
 
 def parse_cvhonor(content: str) -> list:
@@ -277,54 +273,6 @@ def parse_cvskill(content: str) -> list:
     return skills
 
 
-def parse_bib_entries(content: str) -> list:
-    """Parse bibliography entries from .bib file."""
-    publications = []
-    
-    # Pattern for @article and @inproceedings
-    entry_pattern = r'@(article|inproceedings|misc)\{([^,]+),'
-    
-    for match in re.finditer(entry_pattern, content, re.DOTALL):
-        entry_type = match.group(1)
-        entry_key = match.group(2)
-
-        # Extract only this BibTeX entry, without trailing comments or later entries.
-        brace_start = content.find('{', match.start())
-        entry_body, _ = extract_brace_content(content, brace_start)
-        entry_text = entry_body.split(',', 1)[1] if ',' in entry_body else ''
-        
-        fields = {}
-        # Parse fields by looking for field_name = { and using brace extraction
-        field_pattern = r'(\w+)\s*=\s*\{'
-        for field_match in re.finditer(field_pattern, entry_text):
-            field_name = field_match.group(1).lower()
-            field_value, _ = extract_brace_content(entry_text, field_match.end() - 1)
-            fields[field_name] = field_value.strip()
-        
-        # Clean up author field - properly handle \textbf{}
-        if 'author' in fields:
-            authors = fields['author']
-            # Replace \textbf{Name} with **Name**
-            authors = re.sub(r'\\textbf\{([^}]+)\}', r'**\1**', authors)
-            authors = authors.replace(' and ', ', ')
-            fields['author'] = authors
-        
-        # Clean up title field
-        if 'title' in fields:
-            title = fields['title']
-            # Remove extra braces used for case preservation
-            title = re.sub(r'\{([^}]+)\}', r'\1', title)
-            fields['title'] = title
-        
-        publications.append({
-            'type': entry_type,
-            'key': entry_key,
-            'fields': fields
-        })
-    
-    return publications
-
-
 def generate_markdown():
     """Generate the complete Markdown CV."""
     cv_dir = Path(__file__).parent / 'cv'
@@ -359,50 +307,27 @@ def generate_markdown():
     # Publications
     md.append("## 📄 Publications")
     md.append("")
-    bib_content = (cv_dir / 'references.bib').read_text()
-    publications = parse_bib_entries(bib_content)
-    for pub in publications:
-        fields = pub['fields']
-        title = fields.get('title', '').replace('{', '').replace('}', '')
-        authors = fields.get('author', '')
-        year = fields.get('year', '')
-        url = fields.get('url', '')
-        
-        if pub['type'] == 'article':
-            journal = fields.get('journal', '')
-            if url:
-                md.append(f"- **[{title}]({url})** ({year})")
-            else:
-                md.append(f"- **{title}** ({year})")
-            md.append(f"  - {authors}")
-            md.append(f"  - *{journal}*")
-        elif pub['type'] == 'inproceedings':
-            booktitle = fields.get('booktitle', '')
-            if url:
-                md.append(f"- **[{title}]({url})** ({year})")
-            else:
-                md.append(f"- **{title}** ({year})")
-            md.append(f"  - {authors}")
-            md.append(f"  - *{booktitle}*")
-        else:  # misc (preprints)
-            if url:
-                md.append(f"- **[{title}]({url})** ({year})")
-            else:
-                md.append(f"- **{title}** ({year})")
-            md.append(f"  - {authors}")
-            note = fields.get('note', '')
-            if note:
-                md.append(f"  - *{note}*")
+    publications_content = (cv_dir / 'publications.tex').read_text()
+    for pub in parse_cvpublication(publications_content):
+        md.append(f"- **{pub['title']}**")
+        if pub['links']:
+            md.append(f"  - {pub['authors']} · {pub['links']}")
+        else:
+            md.append(f"  - {pub['authors']}")
+        md.append(f"  - *{pub['venue']}*")
+        md.append("")
+    if '$^*$' in publications_content:
+        md.append("\\* Equal contribution.")
         md.append("")
 
-    # Positions and Programs
-    md.append("## Positions and Programs")
+    # Experience
+    md.append("## Experience")
     md.append("")
     positions_content = (cv_dir / 'positions.tex').read_text()
-    entries = parse_cvpositionentry(positions_content)
+    entries = parse_cventry(positions_content)
     for entry in entries:
         md.append(f"### {entry['title']}")
-        md.append(f"*{entry['dates']}*")
+        md.append(f"**{entry['organization']}** | *{entry['dates']}*")
         md.append("")
         for item in entry['items']:
             md.append(f"- {item}")
@@ -430,7 +355,8 @@ def generate_markdown():
         md.append(f"- **{item['category']}:** {item['skills']}")
     md.append("")
 
-    md.append("*Generated on May 25, 2026. For the latest version, see [dundalia.github.io/CV/cv.pdf](https://dundalia.github.io/CV/cv.pdf).*")
+    generated_on = datetime.now().strftime('%B %-d, %Y')
+    md.append(f"*Generated on {generated_on}. For the latest version, see [dundalia.github.io/CV/cv.pdf](https://dundalia.github.io/CV/cv.pdf).*")
     
     return '\n'.join(md)
 
