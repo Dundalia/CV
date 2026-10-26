@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  19 OCT 2026 13:18
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.8)  26 OCT 2026 11:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -762,7 +762,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 ]) (./cv/miscellaneous.tex) (./cv/additional.tex
-Underfull \hbox (badness 10000) in alignment at lines 10--28
+Underfull \hbox (badness 10000) in alignment at lines 10--24
 [][] 
  []
 

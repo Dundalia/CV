@@ -421,8 +421,8 @@ def generate_markdown():
             md.append(f"- {item}")
         md.append("")
     
-    # Additional Skills, Service, and Achievements
-    md.append("## Additional Skills, Service, and Achievements")
+    # Additional Information
+    md.append("## Additional Information")
     md.append("")
     additional_content = (cv_dir / 'additional.tex').read_text()
     additional = parse_cvskill(additional_content)

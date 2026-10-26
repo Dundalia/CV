@@ -109,10 +109,9 @@
 
 - Organized community events and communications, built the organization's website [**belleparoleaps.it**](http://belleparoleaps.it), and secured grant funding for organizational activities.
 
-## Additional Skills, Service, and Achievements
+## Additional Information
 
-- **Reviewing:** CoLLAs 2026; MemAgent Workshop at ICLR 2026.
-- **Skills:** PyTorch, Hugging Face, vLLM, LangChain/LangGraph, Python, Linux, LaTeX, Weights & Biases, Figma.
+- **Reviewing:** ICLR 2027; CoLLAs 2026; MemAgents Workshop at ICLR 2026.
 - **Recognition:** Selected Participant, Y Combinator AI Startup School (Jun 2025).
 - **Languages:** English (professional proficiency); Italian (native proficiency).
 
