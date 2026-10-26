@@ -9,19 +9,19 @@
 ## 🎓 Education
 
 ### PhD in Computer Engineering (GPA: 4.0)
-**MILA and Polytechnique Montréal** | *Jan 2025 - Current*
+**MILA and Polytechnique Montréal** | *Jan 2025 - Present*
 
 - Supervisors: Sarath Chandar, Amal Zouaq.
 - Courses included Representation Learning, Reinforcement Learning.
 
 ### MSc in Artificial Intelligence (Grade: 110/110 cum laude)
-**University of Bologna** | *Sept 2021 - Oct 2023*
+**University of Bologna** | *Sep 2021 - Oct 2023*
 
 - Courses included Programming for Data Science, Knowledge Representation and Reasoning, Statistical Theory and Methods, Machine Learning, Deep Learning, Computer Vision, Natural Language Processing.
 - [Thesis: A TWO-step LLM Augmented distillation method for passage Reranking](https://amslaurea.unibo.it/30082/).
 
 ### BSc in Mathematics (Grade: 110/110)
-**University of Florence** | *Sept 2017 - Mar 2021*
+**University of Florence** | *Sep 2017 - Mar 2021*
 
 - Courses included Analysis, Linear Algebra, Geometry, Probability and Statistics, Logic and Computability.
 - [Thesis: Big Deviations for Markov Chains](https://github.com/Freddavide/Freddavide/blob/main/elaborato_B036_Baldelli_Davide.pdf).
@@ -61,7 +61,7 @@
 - Technical AI safety program focused on building ML engineering skills for alignment research.
 
 ### Loop AI Labs Inc.
-*Sept 2022 - Dec 2024*
+*Sep 2022 - Dec 2024*
 
 - Machine Learning Engineer.
 - Co-supervised a master's thesis titled "Self Assessment Tool for Medical Exam Candidates" in collaboration with the University of Padova.
@@ -90,7 +90,7 @@
 - Mentoring two research fellows on building robust activation monitors for language models.
 
 ### Web Communication Chair
-**CoLLAs 2026 (Conference on Lifelong Learning Agents)** | *Nov 2025 - Current*
+**CoLLAs 2026 (Conference on Lifelong Learning Agents)** | *Nov 2025 - Present*
 
 - Managing the official conference website and digital presence for the 2026 edition.
 
@@ -100,12 +100,12 @@
 - Designed and delivered educational workshops on Machine Learning and Probability for high school students.
 
 ### Co-Creator and Technical Lead
-**[UILO -- Career Orientation Platform](https://www.uilo.it)** | *Sept 2024 -- Present*
+**[UILO -- Career Orientation Platform](https://www.uilo.it)** | *Sep 2024 - Present*
 
 - Built UILO, a career orientation platform for post-secondary education with university and career databases and psychometry-based recommendations.
 
 ### Co-Founder, Non-Profit Association
-**Belle Parole Arci APS** | *Nov 2023 - Current*
+**Belle Parole Arci APS** | *Nov 2023 - May 2026*
 
 - Organized community events and communications, built the organization's website [**belleparoleaps.it**](http://belleparoleaps.it), and secured grant funding for organizational activities.
 
