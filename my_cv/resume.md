@@ -39,7 +39,7 @@
 
 - **LLMs Can't Play Hangman: On the Necessity of a Private Working Memory for Language Agents**
   - **Davide Baldelli**, Ali Parviz, Amal Zouaq, Sarath Chandar · [paper](https://arxiv.org/abs/2601.06973) [code](https://github.com/chandar-lab/Hangman)
-  - *CoLLAs 2026 (Oral); MemAgents Workshop @ ICLR 2026*
+  - *CoLLAs 2026 (Oral)*
 
 - **CADmium: Fine-Tuning Code Language Models for Text-Driven Sequential CAD Design**
   - Prashant Govindarajan\*, **Davide Baldelli**\*, Jay Pathak, Quentin Fournier, Sarath Chandar · [paper](https://arxiv.org/abs/2507.09792) [code](https://github.com/chandar-lab/CADmium)

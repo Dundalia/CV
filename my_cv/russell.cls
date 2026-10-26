@@ -182,11 +182,14 @@
 
 % Usage: \cvpublication[links]{title}{authors}{venue}
 % Links (e.g. \cvextlink{url}{[paper]} \cvextlink{url}{[code]}) follow the authors.
+% The title takes all the width the venue label leaves free.
+\newlength{\cvpubvenuewidth}
 \newcommand*{\cvpublication}[4][]{%
+  \settowidth{\cvpubvenuewidth}{\footnotesize\itshape #4}%
   \noindent
   \begin{minipage}[t]{\textwidth}
     \noindent
-    \begin{tabular*}{\textwidth}{@{}p{0.70\textwidth}@{\extracolsep{\fill}}r@{}}
+    \begin{tabular*}{\textwidth}{@{}p{\dimexpr\textwidth-\cvpubvenuewidth-1.5em\relax}@{\extracolsep{\fill}}r@{}}
       \raggedright\textbf{#2} & {\footnotesize\itshape #4} \\
       \multicolumn{2}{@{}p{\textwidth}@{}}{{\footnotesize #3\ifstrempty{#1}{}{\quad #1}}}
     \end{tabular*}
